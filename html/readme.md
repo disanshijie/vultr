@@ -1,24 +1,12 @@
----
-title: readme
-date: 2019-08-04 23:35:53
-author: sun bo
-notebook: blog
-evernote-version: 0
-source: 原创/转载
-share: false/true
-thumbnail: 
-tags: [默认]
-categories:
-    - e:\Data\VSCode\WorkSpace\Space1\vultr\html
-blogexcerpt:
----
+
 vultr-api 接口实现自动创建服务器 使用实例
 
 <!-- more -->
 
 #### 必备条件
 
-有一个vultr账号，并且有一定余额
+有一个vultr账号，并且有余额 [地址](https://www.vultr.com/?ref=7384523)
+
 vultr账号开通 api 功能 [链接](https://my.vultr.com/settings/#settingsapi)
 
 #### 使用
