@@ -124,8 +124,10 @@ function serverCreate() {
         return;
     }
     if (!scriptid) {
-        alert("请输入scriptid");
-        return;
+        //alert("请输入scriptid");
+        if (!confirm("没有输入scriptid,确定要购买服务器吗？,启动后将不运行任何命令")) {
+            return;
+        }
     }
 
     $("#serverCreate").find(".scriptid").val(scriptid);
