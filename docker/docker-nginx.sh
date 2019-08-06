@@ -9,7 +9,7 @@ docker_nginx(){
     mkdir -p $dirname
     #赋予文件夹权限（一般不需要）
     cd $dirname
-    curl -fsSL ${url_github}/vultr/master/web/index.html 
+    curl -fsSL -O ${url_github}/vultr/master/web/index.html 
     chmod 777 -R $dirname
     #拉取
     docker pull nginx

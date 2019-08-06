@@ -1,17 +1,4 @@
----
-title: readme
-date: 2019-08-04 00:25:32
-author: sun bo
-notebook: blog
-evernote-version: 0
-source: 原创/转载
-share: false/true
-thumbnail: 
-tags: [默认]
-categories:
-    - e:\Data\VSCode\WorkSpace\Space1\vultr\docs
-blogexcerpt:
----
+
 #### 说明
 
 整理了一下 [vultr的接口文档](https://www.vultr.com/api)
