@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>vultr-manage.html</title>
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache, must-revalidate">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="./css/sunlogo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="./css/sunlogo.jpg">
+    <link rel="Bookmark" href="./css/sunlogo.jpg">
+
+    <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/index.js?v=123"></script>
+</head>
+
+<body>
+    <div id="contact">
+        <h3>常量</h3>
+        <div>
+            <div class="box-in">
+                <p class="tag-in">apikey </p><input class="text-in" type="text" name="" id="apikey" value="" placeholder="apikey"></div>
+            <div class="box-in">
+                <p class="tag-in">SUBID</p><input class="text-in" type="text" name="" id="subid" value="" placeholder="SUBID"></div>
+            <div class="box-in">
+                <p class="tag-in">SCRIPTID</p><input class="text-in" type="text" name="" id="scriptid" value="" placeholder="SCRIPTID"></div>
+
+        </div>
+        <div>
+            <h3>购买</h3>
+            <form action="" method="post" id="serverCreate">
+                <select class="select-server-plan" name="DCID">
+                    <option value="1" selected>纽约
+                    <option value="5">洛杉矶
+                    <option value="25">日本
+                </select>
+                <select class="select-server-plan" name="OSID">
+                    <option value="167" selected>centos7
+                    <option value="193">debian8
+                    <option value="270">ubuntu18
+                </select>
+                <select class="select-server-plan" name="VPSPLANID">
+                    <option value="200" selected>$3.50
+                    <option value="201">$5.00
+                    <option value="400">$6.00
+                    <option value="199">$2.50
+                </select>
+
+                <input type="hidden" name="SCRIPTID" class="scriptid">
+                <input type="hidden" name="enable_ipv6" value="yes">
+                <input type="button" value="购买" onclick="serverCreate(this)">
+            </form>
+            <div>
+                <p id="buyResult"></p>
+            </div>
+        </div>
+
+        <div>
+            <h3>服务器</h3>
+            <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
+            <div class="box-server-list" id="server-list">
+                <!-- 
+                <ul class="">
+                    <li>ip：<a class="a-ip">127.12.14</a></li>
+                    <li>密码：<a class="a-pw">hshttrth</a></li>
+                    <li>SUBID：<a class="a-subid">124512</a></li>
+                    <button onclick="reboot(this)">重启</button>
+                    <button onclick="reset(this)">重装</button>
+                    <button onclick="destory(this)">销毁</button>
+                </ul>
+                 -->
+            </div>
+        </div>
+
+        <div>
+            <h3>脚本</h3>
+            <div class="box-in"><input type="button" value="新建脚本" onclick="newStartupscript()"></div>
+            <form action="" method="post" id="startupscriptForm" style="display:none;">
+                <input class="text-in" type="text" name="name" id="J_name" value="" placeholder="name">
+                <input class="text-in" type="text" name="type" id="J_type" value="" placeholder="boot或者pxe">
+                <!-- <input class="text-in" type="text" name="script" id="J_script" value="" placeholder="script"> -->
+                <textarea name="script" id="J_script" cols="30" rows="10" placeholder="script"></textarea>
+                <br>
+                <input id="startupscriptSubmit" type="button" value="提交" onclick="startupscriptCreate(this)" style="width: 25%;">
+                <input type="button" value="取消" onclick="displayStartupscript(this)" style="width: 25%;">
+            </form>
+
+            </br>
+            <div class="box-in"><input type="button" value="获取脚本列表" onclick="startupscriptList()"></div>
+            <div class="box-list" id="scriptList">
+                <table class="" cellspacing="0" cellpadding="0">
+                    <thead>
+                        <tr>
+                            <td>SCRIPTID</td>
+                            <td>name</td>
+                            <td>type</td>
+                            <td>script</td>
+                            <td>操作 opear</td>
+                        </tr>
+                    </thead>
+                    <tbody id="scriptIdList">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- 
+        <div>
+            <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
+        </div>
+        <div>
+            <textarea name="" id="outputinfo" cols="100px" rows="50px"></textarea>
+        </div>
+         -->
+    </div>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function() {
+        //初始化绑定事件
+        //pageEventInit();
+        getUrlApiKey();
+    });
+
+    function getUrlApiKey() {
+        var url = window.location.href;
+        if (url.lastIndexOf('?') > 0) {
+            var index = url.substring(url.lastIndexOf('?') + 1);
+            if (index && index.length > 5) {
+                let pars = index.split("&");
+                $("#apikey").val(pars[0]);
+                $("#scriptid").val(pars[1]);
+            }
+        }
+    }
+
+    function copyScript(SCRIPTID) {
+        $("#scriptid").val(SCRIPTID);
+        alert("应用成功！");
+    }
+
+    function copySubid(subid) {
+        $("#subid").val(subid);
+    }
+
+    function newStartupscript() {
+        $("#startupscriptForm").show();
+        $("#startupscriptSubmit").prop("disabled", "false");
+    }
+
+    function displayStartupscript() {
+        $("#startupscriptForm").hide();
+    }
+</script>

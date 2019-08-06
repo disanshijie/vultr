@@ -1,0 +1,1468 @@
+{
+	"info": {
+		"_postman_id": "75d7e529-8628-466d-9364-6e87a7fad22d",
+		"name": "Vultr",
+		"description": "https://www.vultr.com/api\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "公用",
+			"item": [
+				{
+					"name": "操作系统名单",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/os/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"os",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "https://api.vultr.com/v1/os/list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/app/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"app",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "地区列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}v1/regions/list",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"regions",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "地区列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}v1/regions/list",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"regions",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Aug 2019 13:25:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 03 Aug 2019 13:25:03 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"1\": {\n        \"DCID\": \"1\",\n        \"name\": \"New Jersey\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"NJ\",\n        \"ddos_protection\": true,\n        \"block_storage\": true,\n        \"regioncode\": \"EWR\"\n    },\n    \"2\": {\n        \"DCID\": \"2\",\n        \"name\": \"Chicago\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"IL\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"ORD\"\n    },\n    \"3\": {\n        \"DCID\": \"3\",\n        \"name\": \"Dallas\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"TX\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"DFW\"\n    },\n    \"4\": {\n        \"DCID\": \"4\",\n        \"name\": \"Seattle\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"WA\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"SEA\"\n    },\n    \"5\": {\n        \"DCID\": \"5\",\n        \"name\": \"Los Angeles\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"CA\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"LAX\"\n    },\n    \"6\": {\n        \"DCID\": \"6\",\n        \"name\": \"Atlanta\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"GA\",\n        \"ddos_protection\": false,\n        \"block_storage\": false,\n        \"regioncode\": \"ATL\"\n    },\n    \"7\": {\n        \"DCID\": \"7\",\n        \"name\": \"Amsterdam\",\n        \"country\": \"NL\",\n        \"continent\": \"Europe\",\n        \"state\": \"\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"AMS\"\n    },\n    \"8\": {\n        \"DCID\": \"8\",\n        \"name\": \"London\",\n        \"country\": \"GB\",\n        \"continent\": \"Europe\",\n        \"state\": \"\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"LHR\"\n    },\n    \"9\": {\n        \"DCID\": \"9\",\n        \"name\": \"Frankfurt\",\n        \"country\": \"DE\",\n        \"continent\": \"Europe\",\n        \"state\": \"\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"FRA\"\n    },\n    \"12\": {\n        \"DCID\": \"12\",\n        \"name\": \"Silicon Valley\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"CA\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"SJC\"\n    },\n    \"19\": {\n        \"DCID\": \"19\",\n        \"name\": \"Sydney\",\n        \"country\": \"AU\",\n        \"continent\": \"Australia\",\n        \"state\": \"\",\n        \"ddos_protection\": false,\n        \"block_storage\": false,\n        \"regioncode\": \"SYD\"\n    },\n    \"22\": {\n        \"DCID\": \"22\",\n        \"name\": \"Toronto\",\n        \"country\": \"CA\",\n        \"continent\": \"North America\",\n        \"state\": \"\",\n        \"ddos_protection\": false,\n        \"block_storage\": false,\n        \"regioncode\": \"YTO\"\n    },\n    \"24\": {\n        \"DCID\": \"24\",\n        \"name\": \"Paris\",\n        \"country\": \"FR\",\n        \"continent\": \"Europe\",\n        \"state\": \"\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"CDG\"\n    },\n    \"25\": {\n        \"DCID\": \"25\",\n        \"name\": \"Tokyo\",\n        \"country\": \"JP\",\n        \"continent\": \"Asia\",\n        \"state\": \"\",\n        \"ddos_protection\": false,\n        \"block_storage\": false,\n        \"regioncode\": \"NRT\"\n    },\n    \"39\": {\n        \"DCID\": \"39\",\n        \"name\": \"Miami\",\n        \"country\": \"US\",\n        \"continent\": \"North America\",\n        \"state\": \"FL\",\n        \"ddos_protection\": true,\n        \"block_storage\": false,\n        \"regioncode\": \"MIA\"\n    },\n    \"40\": {\n        \"DCID\": \"40\",\n        \"name\": \"Singapore\",\n        \"country\": \"SG\",\n        \"continent\": \"Asia\",\n        \"state\": \"\",\n        \"ddos_protection\": false,\n        \"block_storage\": false,\n        \"regioncode\": \"SGP\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Server Size 服务器价格",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}v1/plans/list",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"plans",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Server Size 服务器价格",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}v1/plans/list",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"plans",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Aug 2019 13:29:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 03 Aug 2019 13:29:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"115\": {\n        \"VPSPLANID\": \"115\",\n        \"name\": \"8192 MB RAM,110 GB SSD,10.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"8192\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"10.00\",\n        \"bandwidth_gb\": \"10240\",\n        \"price_per_month\": \"60.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            12\n        ]\n    },\n    \"116\": {\n        \"VPSPLANID\": \"116\",\n        \"name\": \"16384 MB RAM,2x110 GB SSD,20.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"16384\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"20.00\",\n        \"bandwidth_gb\": \"20480\",\n        \"price_per_month\": \"120.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            12\n        ]\n    },\n    \"117\": {\n        \"VPSPLANID\": \"117\",\n        \"name\": \"24576 MB RAM,3x110 GB SSD,30.00 TB BW\",\n        \"vcpu_count\": \"6\",\n        \"ram\": \"24576\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"30.00\",\n        \"bandwidth_gb\": \"30720\",\n        \"price_per_month\": \"180.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            12\n        ]\n    },\n    \"118\": {\n        \"VPSPLANID\": \"118\",\n        \"name\": \"32768 MB RAM,4x110 GB SSD,40.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"40.00\",\n        \"bandwidth_gb\": \"40960\",\n        \"price_per_month\": \"240.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            12\n        ]\n    },\n    \"201\": {\n        \"VPSPLANID\": \"201\",\n        \"name\": \"1024 MB RAM,25 GB SSD,1.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"1024\",\n        \"disk\": \"25\",\n        \"bandwidth\": \"1.00\",\n        \"bandwidth_gb\": \"1024\",\n        \"price_per_month\": \"5.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"202\": {\n        \"VPSPLANID\": \"202\",\n        \"name\": \"2048 MB RAM,55 GB SSD,2.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"2048\",\n        \"disk\": \"55\",\n        \"bandwidth\": \"2.00\",\n        \"bandwidth_gb\": \"2048\",\n        \"price_per_month\": \"10.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"203\": {\n        \"VPSPLANID\": \"203\",\n        \"name\": \"4096 MB RAM,80 GB SSD,3.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"4096\",\n        \"disk\": \"80\",\n        \"bandwidth\": \"3.00\",\n        \"bandwidth_gb\": \"3072\",\n        \"price_per_month\": \"20.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"204\": {\n        \"VPSPLANID\": \"204\",\n        \"name\": \"8192 MB RAM,160 GB SSD,4.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"8192\",\n        \"disk\": \"160\",\n        \"bandwidth\": \"4.00\",\n        \"bandwidth_gb\": \"4096\",\n        \"price_per_month\": \"40.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"205\": {\n        \"VPSPLANID\": \"205\",\n        \"name\": \"16384 MB RAM,320 GB SSD,5.00 TB BW\",\n        \"vcpu_count\": \"6\",\n        \"ram\": \"16384\",\n        \"disk\": \"320\",\n        \"bandwidth\": \"5.00\",\n        \"bandwidth_gb\": \"5120\",\n        \"price_per_month\": \"80.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"206\": {\n        \"VPSPLANID\": \"206\",\n        \"name\": \"32768 MB RAM,640 GB SSD,6.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"640\",\n        \"bandwidth\": \"6.00\",\n        \"bandwidth_gb\": \"6144\",\n        \"price_per_month\": \"160.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"207\": {\n        \"VPSPLANID\": \"207\",\n        \"name\": \"65536 MB RAM,1280 GB SSD,10.00 TB BW\",\n        \"vcpu_count\": \"16\",\n        \"ram\": \"65536\",\n        \"disk\": \"1280\",\n        \"bandwidth\": \"10.00\",\n        \"bandwidth_gb\": \"10240\",\n        \"price_per_month\": \"320.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            2,\n            3,\n            5,\n            6,\n            12,\n            19,\n            22,\n            25,\n            39,\n            40\n        ]\n    },\n    \"208\": {\n        \"VPSPLANID\": \"208\",\n        \"name\": \"98304 MB RAM,1600 GB SSD,15.00 TB BW\",\n        \"vcpu_count\": \"24\",\n        \"ram\": \"98304\",\n        \"disk\": \"1600\",\n        \"bandwidth\": \"15.00\",\n        \"bandwidth_gb\": \"15360\",\n        \"price_per_month\": \"640.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            12,\n            22\n        ]\n    },\n    \"400\": {\n        \"VPSPLANID\": \"400\",\n        \"name\": \"1024 MB RAM,32 GB SSD,1.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"1024\",\n        \"disk\": \"32\",\n        \"bandwidth\": \"1.00\",\n        \"bandwidth_gb\": \"1024\",\n        \"price_per_month\": \"6.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"401\": {\n        \"VPSPLANID\": \"401\",\n        \"name\": \"2048 MB RAM,64 GB SSD,2.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"2048\",\n        \"disk\": \"64\",\n        \"bandwidth\": \"2.00\",\n        \"bandwidth_gb\": \"2048\",\n        \"price_per_month\": \"12.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"402\": {\n        \"VPSPLANID\": \"402\",\n        \"name\": \"4096 MB RAM,128 GB SSD,3.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"4096\",\n        \"disk\": \"128\",\n        \"bandwidth\": \"3.00\",\n        \"bandwidth_gb\": \"3072\",\n        \"price_per_month\": \"24.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"403\": {\n        \"VPSPLANID\": \"403\",\n        \"name\": \"8192 MB RAM,256 GB SSD,4.00 TB BW\",\n        \"vcpu_count\": \"3\",\n        \"ram\": \"8192\",\n        \"disk\": \"256\",\n        \"bandwidth\": \"4.00\",\n        \"bandwidth_gb\": \"4096\",\n        \"price_per_month\": \"48.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"404\": {\n        \"VPSPLANID\": \"404\",\n        \"name\": \"16384 MB RAM,384 GB SSD,5.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"16384\",\n        \"disk\": \"384\",\n        \"bandwidth\": \"5.00\",\n        \"bandwidth_gb\": \"5120\",\n        \"price_per_month\": \"96.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"405\": {\n        \"VPSPLANID\": \"405\",\n        \"name\": \"32768 MB RAM,512 GB SSD,6.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"512\",\n        \"bandwidth\": \"6.00\",\n        \"bandwidth_gb\": \"6144\",\n        \"price_per_month\": \"192.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"406\": {\n        \"VPSPLANID\": \"406\",\n        \"name\": \"49152 MB RAM,768 GB SSD,8.00 TB BW\",\n        \"vcpu_count\": \"12\",\n        \"ram\": \"49152\",\n        \"disk\": \"768\",\n        \"bandwidth\": \"8.00\",\n        \"bandwidth_gb\": \"8192\",\n        \"price_per_month\": \"256.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            4,\n            5,\n            19,\n            39\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Server Type系统",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}v1/os/list",
+							"host": [
+								"{{url}}v1"
+							],
+							"path": [
+								"os",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Server Type系统",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{url}}v1/os/list",
+									"host": [
+										"{{url}}v1"
+									],
+									"path": [
+										"os",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Aug 2019 13:41:58 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 03 Aug 2019 13:41:57 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"124\": {\n        \"OSID\": 124,\n        \"name\": \"Windows 2012 R2 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"windows\",\n        \"windows\": true\n    },\n    \"127\": {\n        \"OSID\": 127,\n        \"name\": \"CentOS 6 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"centos\",\n        \"windows\": false\n    },\n    \"147\": {\n        \"OSID\": 147,\n        \"name\": \"CentOS 6 i386\",\n        \"arch\": \"i386\",\n        \"family\": \"centos\",\n        \"windows\": false\n    },\n    \"159\": {\n        \"OSID\": 159,\n        \"name\": \"Custom\",\n        \"arch\": \"x64\",\n        \"family\": \"iso\",\n        \"windows\": false\n    },\n    \"164\": {\n        \"OSID\": 164,\n        \"name\": \"Snapshot\",\n        \"arch\": \"x64\",\n        \"family\": \"snapshot\",\n        \"windows\": false\n    },\n    \"167\": {\n        \"OSID\": 167,\n        \"name\": \"CentOS 7 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"centos\",\n        \"windows\": false\n    },\n    \"179\": {\n        \"OSID\": 179,\n        \"name\": \"CoreOS Stable\",\n        \"arch\": \"x64\",\n        \"family\": \"coreos\",\n        \"windows\": false\n    },\n    \"180\": {\n        \"OSID\": 180,\n        \"name\": \"Backup\",\n        \"arch\": \"x64\",\n        \"family\": \"backup\",\n        \"windows\": false\n    },\n    \"186\": {\n        \"OSID\": 186,\n        \"name\": \"Application\",\n        \"arch\": \"x64\",\n        \"family\": \"application\",\n        \"windows\": false\n    },\n    \"193\": {\n        \"OSID\": 193,\n        \"name\": \"Debian 8 x64 (jessie)\",\n        \"arch\": \"x64\",\n        \"family\": \"debian\",\n        \"windows\": false\n    },\n    \"194\": {\n        \"OSID\": 194,\n        \"name\": \"Debian 8 i386 (jessie)\",\n        \"arch\": \"i386\",\n        \"family\": \"debian\",\n        \"windows\": false\n    },\n    \"215\": {\n        \"OSID\": 215,\n        \"name\": \"Ubuntu 16.04 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"ubuntu\",\n        \"windows\": false\n    },\n    \"216\": {\n        \"OSID\": 216,\n        \"name\": \"Ubuntu 16.04 i386\",\n        \"arch\": \"i386\",\n        \"family\": \"ubuntu\",\n        \"windows\": false\n    },\n    \"230\": {\n        \"OSID\": 230,\n        \"name\": \"FreeBSD 11 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"freebsd\",\n        \"windows\": false\n    },\n    \"240\": {\n        \"OSID\": 240,\n        \"name\": \"Windows 2016 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"windows\",\n        \"windows\": true\n    },\n    \"244\": {\n        \"OSID\": 244,\n        \"name\": \"Debian 9 x64 (stretch)\",\n        \"arch\": \"x64\",\n        \"family\": \"debian\",\n        \"windows\": false\n    },\n    \"270\": {\n        \"OSID\": 270,\n        \"name\": \"Ubuntu 18.04 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"ubuntu\",\n        \"windows\": false\n    },\n    \"322\": {\n        \"OSID\": 322,\n        \"name\": \"Fedora 29 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"fedora\",\n        \"windows\": false\n    },\n    \"324\": {\n        \"OSID\": 324,\n        \"name\": \"OpenBSD 6.4 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"openbsd\",\n        \"windows\": false\n    },\n    \"327\": {\n        \"OSID\": 327,\n        \"name\": \"FreeBSD 12 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"freebsd\",\n        \"windows\": false\n    },\n    \"338\": {\n        \"OSID\": 338,\n        \"name\": \"Ubuntu 19.04 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"ubuntu\",\n        \"windows\": false\n    },\n    \"341\": {\n        \"OSID\": 341,\n        \"name\": \"OpenBSD 6.5 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"openbsd\",\n        \"windows\": false\n    },\n    \"342\": {\n        \"OSID\": 342,\n        \"name\": \"Fedora 30 x64\",\n        \"arch\": \"x64\",\n        \"family\": \"fedora\",\n        \"windows\": false\n    },\n    \"352\": {\n        \"OSID\": 352,\n        \"name\": \"Debian 10 x64 (buster)\",\n        \"arch\": \"x64\",\n        \"family\": \"debian\",\n        \"windows\": false\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "服务器",
+			"item": [
+				{
+					"name": "服务器列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "服务器列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"type": "text",
+										"value": "{{apikey}}"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://api.vultr.com/v1/server/list",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vultr",
+										"com"
+									],
+									"path": [
+										"v1",
+										"server",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Aug 2019 16:03:37 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-User",
+									"value": "878455649@qq.com"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 03 Aug 2019 16:03:36 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"27680361\": {\n        \"SUBID\": \"27680361\",\n        \"os\": \"CentOS 7 x64\",\n        \"ram\": \"512 MB\",\n        \"disk\": \"Virtual 10 GB\",\n        \"main_ip\": \"149.28.56.45\",\n        \"vcpu_count\": \"1\",\n        \"location\": \"New Jersey\",\n        \"DCID\": \"1\",\n        \"default_password\": \"6)wSM=%91G??o(r7\",\n        \"date_created\": \"2019-08-03 16:02:59\",\n        \"pending_charges\": \"0.01\",\n        \"status\": \"active\",\n        \"cost_per_month\": \"3.50\",\n        \"current_bandwidth_gb\": 0,\n        \"allowed_bandwidth_gb\": \"500\",\n        \"netmask_v4\": \"255.255.254.0\",\n        \"gateway_v4\": \"149.28.56.1\",\n        \"power_status\": \"running\",\n        \"server_state\": \"installingbooting\",\n        \"VPSPLANID\": \"200\",\n        \"v6_main_ip\": \"2001:19f0:5:3ae3:5400:02ff:fe35:18f8\",\n        \"v6_network_size\": \"64\",\n        \"v6_network\": \"2001:19f0:5:3ae3::\",\n        \"v6_networks\": [\n            {\n                \"v6_main_ip\": \"2001:19f0:5:3ae3:5400:02ff:fe35:18f8\",\n                \"v6_network_size\": \"64\",\n                \"v6_network\": \"2001:19f0:5:3ae3::\"\n            }\n        ],\n        \"label\": \"\",\n        \"internal_ip\": \"\",\n        \"kvm_url\": \"https://my.vultr.com/subs/vps/novnc/api.php?data=djJ8NUR3QWNWMWg2enQyb2ZTVmN1NnI0cWwyN1laQWZQT0p8rhm42OPWE9xdm90yz_arudB90HDuBBHdRq1HqH19XXhR7syeDEiCQGYgEfSWOR-RyCLcws0JKHHNk5bDRfY7TGezI-Rg_CUDiTdS7q1uLCyrsD4-H4PVrB1P-3H2EVKQQmheKsc66TGQ8pnb3_hX-jowJXGjWgU8CJhhN0Ou5dTCutc-\",\n        \"auto_backups\": \"no\",\n        \"tag\": \"\",\n        \"OSID\": \"167\",\n        \"APPID\": \"0\",\n        \"FIREWALLGROUPID\": \"0\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "单个服务器详细信息",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "{{apikey}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/list?SUBID={{SUBID}}",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"list"
+							],
+							"query": [
+								{
+									"key": "SUBID",
+									"value": "{{SUBID}}"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "单个服务器详细信息",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"value": "{{apikey}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://api.vultr.com/v1/server/list?SUBID={{SUBID}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vultr",
+										"com"
+									],
+									"path": [
+										"v1",
+										"server",
+										"list"
+									],
+									"query": [
+										{
+											"key": "SUBID",
+											"value": "{{SUBID}}"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 03 Aug 2019 16:24:01 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-User",
+									"value": "878455649@qq.com"
+								},
+								{
+									"key": "Expires",
+									"value": "Sat, 03 Aug 2019 16:24:00 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"SUBID\": \"27680361\",\n    \"os\": \"CentOS 7 x64\",\n    \"ram\": \"512 MB\",\n    \"disk\": \"Virtual 10 GB\",\n    \"main_ip\": \"149.28.56.45\",\n    \"vcpu_count\": \"1\",\n    \"location\": \"New Jersey\",\n    \"DCID\": \"1\",\n    \"default_password\": \"6)wSM=%91G??o(r7\",\n    \"date_created\": \"2019-08-03 16:02:59\",\n    \"pending_charges\": \"0.01\",\n    \"status\": \"active\",\n    \"cost_per_month\": \"3.50\",\n    \"current_bandwidth_gb\": 0,\n    \"allowed_bandwidth_gb\": \"500\",\n    \"netmask_v4\": \"255.255.254.0\",\n    \"gateway_v4\": \"149.28.56.1\",\n    \"power_status\": \"running\",\n    \"server_state\": \"ok\",\n    \"VPSPLANID\": \"200\",\n    \"v6_main_ip\": \"2001:19f0:5:3ae3:5400:02ff:fe35:18f8\",\n    \"v6_network_size\": \"64\",\n    \"v6_network\": \"2001:19f0:5:3ae3::\",\n    \"v6_networks\": [\n        {\n            \"v6_main_ip\": \"2001:19f0:5:3ae3:5400:02ff:fe35:18f8\",\n            \"v6_network_size\": \"64\",\n            \"v6_network\": \"2001:19f0:5:3ae3::\"\n        }\n    ],\n    \"label\": \"\",\n    \"internal_ip\": \"\",\n    \"kvm_url\": \"https://my.vultr.com/subs/vps/novnc/api.php?data=djJ8NUR3QWNWMWg2enQyb2ZTVmN1NnI0cWwyN1laQWZQT0p8rhm42OPWE9xdm90yz_arudB90HDuBBHdRq1HqH19XXhR7syeDEiCQGYgEfSWOR-RyCLcws0JKHHNk5bDRfY7TGezI-Rg_CUDiTdS7q1uLCyrsD4-H4PVrB1P-3H2EVKQQmheKsc66TGQ8pnb3_hX-jowJXGjWgU8CJhhN0Ou5dTCutc-\",\n    \"auto_backups\": \"no\",\n    \"tag\": \"\",\n    \"OSID\": \"167\",\n    \"APPID\": \"0\",\n    \"FIREWALLGROUPID\": \"0\"\n}"
+						}
+					]
+				},
+				{
+					"name": "创建服务器",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "DCID",
+									"value": "1",
+									"description": "纽约:1 洛杉矶:5 日本:25",
+									"type": "text"
+								},
+								{
+									"key": "OSID",
+									"value": "167",
+									"description": "167:centos7 debian8:193  debian9:244 ubuntu18：270 ubuntu19：338",
+									"type": "text"
+								},
+								{
+									"key": "VPSPLANID",
+									"value": "200",
+									"description": "2.5美元:199 3.5美元:200 5美元:201 6美元:400",
+									"type": "text"
+								},
+								{
+									"key": "enable_ipv6",
+									"value": "yes",
+									"type": "text"
+								},
+								{
+									"key": "SCRIPTID",
+									"value": "564306",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/create?",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"create"
+							],
+							"query": [
+								{
+									"key": "DCID",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "METALPLANID",
+									"value": "201",
+									"description": "5美元:201 6美元:400",
+									"disabled": true
+								},
+								{
+									"key": "OSID",
+									"value": "167",
+									"description": "167:centos7",
+									"disabled": true
+								},
+								{
+									"key": "enable_ipv6",
+									"value": "yes",
+									"disabled": true
+								},
+								{
+									"key": "SCRIPTID",
+									"value": "564306",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "重启服务器",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SUBID",
+									"value": "{{SUBID}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/reboot",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"reboot"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "重装服务器",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SUBID",
+									"value": "{{SUBID}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/reinstall",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"reinstall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "销毁服务器",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "{{apikey}}"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SUBID",
+									"value": "{{SUBID}}",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/server/destroy",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"server",
+								"destroy"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "创建启动脚本",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "API-Key",
+						"type": "text",
+						"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "test2",
+							"type": "text"
+						},
+						{
+							"key": "type",
+							"value": "boot",
+							"type": "text"
+						},
+						{
+							"key": "script",
+							"value": "#!/bin/bash\necho hello world > /root/hello",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vultr.com/v1/startupscript/create",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vultr",
+						"com"
+					],
+					"path": [
+						"v1",
+						"startupscript",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "创建启动脚本",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "docker-nginx",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "pxe",
+									"type": "text"
+								},
+								{
+									"key": "script",
+									"value": "#!/bin/bash\ncurl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-nginx.sh | sh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/startupscript/create",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"startupscript",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2019 14:35:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-User",
+							"value": "878455649@qq.com"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 03 Aug 2019 14:35:01 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"SCRIPTID\": 564303\n}"
+				},
+				{
+					"name": "创建启动脚本ssr",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "docker-ssr",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "boot",
+									"type": "text"
+								},
+								{
+									"key": "script",
+									"value": "#!/bin/bash\ncurl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-ssr.sh | sh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/startupscript/create",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"startupscript",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2019 14:38:10 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-User",
+							"value": "878455649@qq.com"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 03 Aug 2019 14:38:09 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"SCRIPTID\": 564306\n}"
+				}
+			]
+		},
+		{
+			"name": "更新启动脚本",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "API-Key",
+						"type": "text",
+						"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "SCRIPTID",
+							"value": "564308",
+							"type": "text"
+						},
+						{
+							"key": "name",
+							"value": "test2",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "script",
+							"value": "#!ipxe\necho Hello World\nshell",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vultr.com/v1/startupscript/update",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vultr",
+						"com"
+					],
+					"path": [
+						"v1",
+						"startupscript",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除启动脚本",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "API-Key",
+						"type": "text",
+						"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "SCRIPTID",
+							"value": "564303",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://api.vultr.com/v1/startupscript/destroy",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vultr",
+						"com"
+					],
+					"path": [
+						"v1",
+						"startupscript",
+						"destroy"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "删除启动脚本",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "SCRIPTID",
+									"value": "564303",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/startupscript/destroy",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"startupscript",
+								"destroy"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2019 16:15:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=UTF-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-User",
+							"value": "878455649@qq.com"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 03 Aug 2019 16:15:26 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "获取启动脚本列表",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "API-Key",
+						"type": "text",
+						"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://api.vultr.com/v1/startupscript/list",
+					"protocol": "https",
+					"host": [
+						"api",
+						"vultr",
+						"com"
+					],
+					"path": [
+						"v1",
+						"startupscript",
+						"list"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "获取启动脚本列表",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/startupscript/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"startupscript",
+								"list"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2019 16:15:32 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-User",
+							"value": "878455649@qq.com"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 03 Aug 2019 16:15:31 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"564306\": {\n        \"SCRIPTID\": \"564306\",\n        \"date_created\": \"2019-08-03 14:38:10\",\n        \"date_modified\": \"2019-08-03 16:14:20\",\n        \"name\": \"docker-ssr\",\n        \"type\": \"boot\",\n        \"script\": \"#!/bin/bash\\ncurl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-ssr.sh | sh\"\n    },\n    \"564308\": {\n        \"SCRIPTID\": \"564308\",\n        \"date_created\": \"2019-08-03 15:07:01\",\n        \"date_modified\": \"2019-08-03 16:15:06\",\n        \"name\": \"test\",\n        \"type\": \"pxe\",\n        \"script\": \"#!ipxe\\necho Hello World\\nshell\"\n    },\n    \"564314\": {\n        \"SCRIPTID\": \"564314\",\n        \"date_created\": \"2019-08-03 15:53:16\",\n        \"date_modified\": \"2019-08-03 15:53:16\",\n        \"name\": \"test2\",\n        \"type\": \"boot\",\n        \"script\": \"#!/bin/bash\\n\\necho hello world > /root/hello\"\n    }\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "5170c6c6-abe5-42ee-80d7-7aadfa28923d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e301141d-88d3-46b8-94b5-77d5b0eb627e",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
