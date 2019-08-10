@@ -98,7 +98,7 @@ var serverList = (data) => {
             str += '	<li>密码：<a class="a-pw">' + data[key].default_password + '</a></li>';
             str += '	<li>SUBID：<a class="a-subid">' + key + '</a></li>';
             str += '	<li>月费：<a class="a-price">' + data[key].cost_per_month + '</a></li>';
-            str += '	<li>月费：<a class="a-price">' + data[key].os + '</a></li>';
+            str += '	<li>系统：<a class="a-price">' + data[key].os + '</a></li>';
             str += '	<li>创建时间：<a class="a-date">' + data[key].date_created + '</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
             str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
