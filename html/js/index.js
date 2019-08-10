@@ -220,9 +220,9 @@ function startupscriptCreate(obj) {
         return;
     }
 
-    //$(obj).prop("disabled", "true");
+    $(obj).prop("disabled", "true");
     console.log("创建中...");
-    console.log("创建中..." + httpUrl.startupscript_create);
+    //console.log("创建中..." + httpUrl.startupscript_create);
     ajaxPost(httpUrl.startupscript_create, {
         name: $("#J_name").val(),
         type: $("#J_type").val(),

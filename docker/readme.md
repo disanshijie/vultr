@@ -51,8 +51,8 @@ ssr版客户端  [window](https://github.com/shadowsocksrr/shadowsocksr-csharp/r
 
 **默认参数**：
 
-> Aria2 UI: http://ip:6800/ui/
-> FileManger:http://ip:6800
+> Aria2 UI: http://ip:80/ui/
+> FileManger:http://ip:80
 > 下载路径：~/sls
 > 请使用 admin/admin 进行登录
 

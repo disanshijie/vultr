@@ -31,13 +31,14 @@ docker_aria2_with_webui(){
 #来源：https://github.com/wahyd4/aria2-ariang-docker
 # aria2 + webUI
 # 功能全，镜像有点大100MB
+# $1端口 $2令牌 $3$4
 docker_aria2_ariang_docker(){
     #拉取
     docker pull wahyd4/aria2-ui:latest
     #运行
     docker run -d --name ariang \
-        -p 6800:80 \
-        -e RPC_SECRET=123456 \
+        -p $1:80 \
+        -e RPC_SECRET=$2 \
         -v $dirname:/data \
     wahyd4/aria2-ui
 }
@@ -50,7 +51,7 @@ docker_h5ai(){
     docker pull corfr/h5ai:latest
     #运行
     sudo docker run -d \
-    -p 6803:80 \
+    -p $1:80 \
     -v $dirname:/var/www \
     corfr/h5ai
 }
@@ -60,8 +61,8 @@ main(){
     curl -fsSL $url_github/vultr/master/docker/check-install.sh | sh
     #
     #docker_aria2_with_webui
-    docker_aria2_ariang_docker
-    docker_h5ai
+    docker_aria2_ariang_docker 80 123456
+    docker_h5ai 6803
 
     #安装docker-compose
     #sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose

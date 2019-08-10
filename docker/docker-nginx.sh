@@ -2,7 +2,7 @@
 #docker_nginx
 
 url_github=https://raw.githubusercontent.com/disanshijie
-dirname=~/sls
+dirname=~/sls/nginx
 
 #启动镜像
 docker_nginx(){
