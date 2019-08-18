@@ -1,7 +1,8 @@
 
 
+## 更新
 
-### 更新
+最后编辑 2019-08-06
 
 TODO Huginn
 
@@ -10,50 +11,67 @@ https://github.com/liuzhuoling2011/baidupcs-web
 
 nginx ngork aria 
 
-最后编辑 2019-08-06
+## 说明
 
-### 说明
+### **代理**
 
-##### docker-nginx.sh
+#### **docker-nginx.sh**
 
 宿主机映射位置：/root/sls
 
-##### docker-ssr.sh
+### **科学上网**
+
+#### **docker-ssr.sh**
 
 启动后默认配置
 
-ip：
-端口：8000
-密码：doub.io
-加密：rc4-md5
-协议：auth_aes128_md5
-混淆：plain
+> ip：
+>
+> 端口：8000
+>
+> 密码：doub.io
+>
+> 加密：rc4-md5
+>
+> 协议：auth_aes128_md5
+>
+> 混淆：plain
+>
+> ssr版客户端  [window](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases) [android](https://github.com/shadowsocksrr/shadowsocksr-android)
+>
 
-ssr版客户端  [window](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases) [android](https://github.com/shadowsocksrr/shadowsocksr-android)
+### **离线下载**
 
+#### **docker-aria2**
 
+略
 
-#### docker-aria2
-
-##### docker_aria2_with_webui
+#### **docker_aria2_with_webui**
 
 默认参数：
 
 > 服务器下载位置：~/sls
+>
 > 下载管理aria-UI：http://ip/6801
+>
 > 下载文件列表folder：http://ip/6802
+>
 > Aria2 RPC 端口号：6800
+>
 > Aria2 RPC 密码令牌：123456
 
 更多参考：<https://github.com/XUJINKAI/aria2-with-webui>
 
-##### docker_aria2_ariang_docker
+#### **docker_aria2_ariang_docker**
 
 **默认参数**：
 
 > Aria2 UI: http://ip:80/ui/
+>
 > FileManger:http://ip:80
+>
 > 下载路径：~/sls
+>
 > 请使用 admin/admin 进行登录
 
 **使用：**
@@ -83,20 +101,25 @@ Aria2 UI第一次需要修改 端口号 6800和 RPC 123456
 
 详细：https://github.com/wahyd4/aria2-ariang-docker/blob/master/README.CN.md
 
-##### docker_h5ai
+### **文件管理器**
+
+#### **docker_h5ai**
 
 服务器文件目录管理工具
 
 **默认配置：**
 
 > 访问：http://ip:6803
+>
 > 文件根目录 ~/sls
 
 根目录不能有index.html
 
 详细：https://github.com/CoRfr/docker-h5ai
 
-#### docker_baidupcs.sh
+### **百度云**
+
+#### **docker_baidupcs.sh**
 
 百度云web客户端 https://github.com/liuzhuoling2011/baidupcs-web
 
