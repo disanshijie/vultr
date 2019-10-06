@@ -18,3 +18,30 @@ docs -------vultr的api文档
 
 html -------服务器操作页面
 
+
+
+### 脚本
+
+#### start.sh
+
+运行脚本
+
+```
+#!/bin/bash
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/start.sh | sh
+```
+
+启动nginx和ssr
+
+
+
+#### test.sh
+
+```
+Aria2 UI: http://ip:80/ui/
+文件管理
+http://ip:80
+http://ip:6803
+百度云
+http://ip:5299
+```

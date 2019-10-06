@@ -133,6 +133,10 @@ TODO 上传时有问题 权限etc
 
 TODO <https://hub.docker.com/r/auska/docker-baidupcs>
 
+效果
 
+![](http://file.qiniu.disanshijie.top/img/20190820213719.png)
+
+![](http://file.qiniu.disanshijie.top/img/20190820213905.png)
 
 ### 参考

@@ -10,7 +10,7 @@ main(){
     chmod 777 -R $dirname
     #安装nginx
     curl -fsSL $url_github/vultr/master/docker/docker-nginx.sh | sh
-    #安装ssr    
+    #安装ssr
     curl -fsSL $url_github/vultr/master/docker/docker-ssr.sh | sh
 
 }
