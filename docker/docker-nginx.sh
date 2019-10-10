@@ -2,7 +2,8 @@
 #docker_nginx
 
 url_github=https://raw.githubusercontent.com/disanshijie
-dirname=`~/sls/nginx`
+homePath=~
+dirname=$homePath/sls/nginx
 
 #启动镜像
 docker_nginx(){
@@ -10,7 +11,7 @@ docker_nginx(){
     #赋予文件夹权限（一般不需要）
     cd $dirname
     curl -fsSL -O ${url_github}/vultr/master/web/index.html 
-    chmod 777 -R $dirname
+    chmod +x -R $dirname
     #拉取
     docker pull nginx
     #删除容器
