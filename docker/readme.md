@@ -139,4 +139,10 @@ TODO <https://hub.docker.com/r/auska/docker-baidupcs>
 
 ![](http://file.qiniu.disanshijie.top/img/20190820213905.png)
 
+
+### docker-squid3代理服务器
+
+使用：
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-squid3.sh | sh
+
 ### 参考
