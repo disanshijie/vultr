@@ -3,6 +3,12 @@ vultr-api 接口实现自动创建服务器 使用实例
 
 <!-- more -->
 
+PS: 
+2020-10-01
+
+baseUrl去掉了/api/ 现在nginx配置文件的匹配项由以前的 location ^~ /api/ { 改为 location ^~ /v1/ {
+    
+
 #### 必备条件
 
 有一个vultr账号，并且有余额 [地址](https://www.vultr.com/?ref=7384523)

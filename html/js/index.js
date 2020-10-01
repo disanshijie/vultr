@@ -1,7 +1,7 @@
 var constant = {
     //baseUrl: 'https://api.vultr.com/',
-    //baseUrl: 'http://localhost:2222/api/', //本地代理
-    baseUrl: 'http://disanshijie.top:2222/api/', //服务器代理
+    //baseUrl: 'http://localhost:2222/', //本地代理
+    baseUrl: 'http://sunjc.top:2222/', //服务器代理
     oldTime: ""
 }
 
