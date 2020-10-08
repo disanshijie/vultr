@@ -9,14 +9,16 @@ main(){
     cd $dirname
     chmod 777 -R $dirname
     #安装nginx
-    #curl -fsSL $url_github/vultr/master/docker/docker-nginx.sh | sh
+    curl -fsSL $url_github/vultr/master/docker/docker-nginx.sh | sh
     #安装ssr    
     curl -fsSL $url_github/vultr/master/docker/docker-ssr.sh | sh
     #安装baidupcs
     curl -fsSL $url_github/vultr/master/docker/docker-baidupcs.sh | sh    
     #安装aria2
     curl -fsSL $url_github/vultr/master/docker/docker-aria2.sh | sh
-    
+
+    #安装chfs
+    curl -fsSL https://gitee.com/sunjinchao/cloudfile_A01/raw/master/chfs/chfs-install.sh | sh
 }
 
 #运行命令
