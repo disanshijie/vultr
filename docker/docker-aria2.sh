@@ -61,7 +61,7 @@ main(){
     curl -fsSL $url_github/vultr/master/docker/check-install.sh | sh
     #
     #docker_aria2_with_webui
-    docker_aria2_ariang_docker 80 123456
+    docker_aria2_ariang_docker 6900 123456
     docker_h5ai 6803
 
     #安装docker-compose

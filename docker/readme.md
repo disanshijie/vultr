@@ -66,9 +66,9 @@ nginx ngork aria
 
 **默认参数**：
 
-> Aria2 UI: http://ip:80/ui/
+> Aria2 UI: http://ip:6900/ui/
 >
-> FileManger:http://ip:80
+> FileManger:http://ip:6900
 >
 > 下载路径：~/sls
 >
@@ -76,7 +76,7 @@ nginx ngork aria
 
 **使用：**
 
-Aria2 UI第一次需要修改 端口号 6800和 RPC 123456
+Aria2 UI第一次需要修改 端口号 6900和 RPC 123456
 
 **开启所有功能**
 
