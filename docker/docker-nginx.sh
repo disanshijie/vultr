@@ -18,7 +18,7 @@ docker_nginx(){
     #docker stop nginx
     #docker rm -f nginx
     #运行
-    docker run -d --name nginx -p 80:80 -p 443:443 -v $dirname:/usr/share/nginx/html nginx --restart=always
+    docker run -d -p 80:80 -p 443:443 -v $dirname:/usr/share/nginx/html --name nginx --restart=always nginx
 
 }
 
