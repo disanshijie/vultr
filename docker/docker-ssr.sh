@@ -13,6 +13,7 @@ docker_ssr_letssudormrf(){
     #运行镜像
     docker run --privileged -d \
 	-p 8000:8008/tcp -p 8000:8008/udp \
+    --restart=always \
 	--name ssr-bbr-docker letssudormrf/ssr-bbr-docker \
 	-p 8008 -k doub.io -m rc4-md5 -O auth_aes128_md5 -o plain
 }
