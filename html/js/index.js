@@ -98,7 +98,9 @@ var serverList = (data) => {
             str += '	<li>密码：<a class="a-pw">' + data[key].default_password + '</a></li>';
             str += '	<li>SUBID：<a class="a-subid">' + key + '</a></li>';
             str += '	<li>月费：<a class="a-price">' + data[key].cost_per_month + '</a></li>';
+            str += '	<li>地址：<a class="a-price">' + data[key].location + '</a></li>';
             str += '	<li>系统：<a class="a-price">' + data[key].os + '</a></li>';
+            str += '	<li>IPv6：<a class="a-price">' + data[key].v6_main_ip + '</a></li>';
             str += '	<li>创建时间：<a class="a-date">' + data[key].date_created + '</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
             str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
@@ -125,7 +127,7 @@ function serverCreate() {
         return;
     }
     if (!scriptid) {
-        //alert("请输入scriptid");
+        alert("请输入scriptid");
         if (!confirm("没有输入scriptid,确定要购买服务器吗？,启动后将不运行任何命令")) {
             return;
         }
@@ -134,6 +136,8 @@ function serverCreate() {
     $("#serverCreate").find(".scriptid").val(scriptid);
     let params = $("#serverCreate").serializeArray();
     //console.log(params);
+
+    params = customIOS(params); //自定义选择操作系统处理
 
     ajaxPost(httpUrl.server_create, params, function(res) {
         let str = "";
@@ -146,6 +150,24 @@ function serverCreate() {
         $("#buyResult").html("购买结果：" + str);
     })
 }
+
+//自定义选择操作系统处理
+function customIOS(params) {
+    let obj = $("#serverCreate").find(".osid option:selected");
+    let osid = obj.val();
+
+    if (osid == '164') {
+        params.pop();
+        params.push({ name: "SNAPSHOTID", value: obj.attr("data") });
+    } else if (osid == '159') { //ISOID
+        params.push({ name: "ISOID", value: obj.attr("data") });
+    } else if (osid == '186') { //APPID
+        params.push({ name: "APPID", value: obj.attr("data") });
+    }
+    return params;
+
+}
+
 //重启
 function serverReboot(SUBID) {
     if (!confirm("确定要重启服务器吗？")) {

@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "75d7e529-8628-466d-9364-6e87a7fad22d",
+		"_postman_id": "9d9ea1bb-829a-4c45-bdfe-5cee36b4da31",
 		"name": "Vultr",
 		"description": "https://www.vultr.com/api\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -36,7 +36,7 @@
 					"response": []
 				},
 				{
-					"name": "https://api.vultr.com/v1/os/list",
+					"name": "镜像市场镜像",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -62,6 +62,129 @@
 					"response": []
 				},
 				{
+					"name": "获取快照列表",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"value": "3SJSFRPWXUJJKJTFZKXAN6G2XAWM5NJQRFSA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/snapshot/list",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"snapshot",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "获取快照列表",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"value": "3SJSFRPWXUJJKJTFZKXAN6G2XAWM5NJQRFSA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://api.vultr.com/v1/snapshot/list",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vultr",
+										"com"
+									],
+									"path": [
+										"v1",
+										"snapshot",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 03:37:35 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-User",
+									"value": "878455649@qq.com"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 10 Sep 2021 03:37:34 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex,noarchive"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"b82613ad0ad99\": {\n        \"SNAPSHOTID\": \"b82613ad0ad99\",\n        \"date_created\": \"2021-09-10 03:27:41\",\n        \"description\": \"ssr\",\n        \"size\": \"10737418240\",\n        \"status\": \"complete\",\n        \"OSID\": \"167\",\n        \"APPID\": \"0\",\n        \"v2_id\": \"48c9b8da-3e0d-4bfc-8b83-5b270603efa0\"\n    }\n}"
+						}
+					]
+				},
+				{
 					"name": "地区列表",
 					"request": {
 						"method": "GET",
@@ -78,11 +201,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}v1/regions/list",
+							"raw": "https://api.vultr.com/v1/regions/list",
+							"protocol": "https",
 							"host": [
-								"{{url}}v1"
+								"api",
+								"vultr",
+								"com"
 							],
 							"path": [
+								"v1",
 								"regions",
 								"list"
 							]
@@ -275,6 +402,125 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"115\": {\n        \"VPSPLANID\": \"115\",\n        \"name\": \"8192 MB RAM,110 GB SSD,10.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"8192\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"10.00\",\n        \"bandwidth_gb\": \"10240\",\n        \"price_per_month\": \"60.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            12\n        ]\n    },\n    \"116\": {\n        \"VPSPLANID\": \"116\",\n        \"name\": \"16384 MB RAM,2x110 GB SSD,20.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"16384\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"20.00\",\n        \"bandwidth_gb\": \"20480\",\n        \"price_per_month\": \"120.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            12\n        ]\n    },\n    \"117\": {\n        \"VPSPLANID\": \"117\",\n        \"name\": \"24576 MB RAM,3x110 GB SSD,30.00 TB BW\",\n        \"vcpu_count\": \"6\",\n        \"ram\": \"24576\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"30.00\",\n        \"bandwidth_gb\": \"30720\",\n        \"price_per_month\": \"180.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            12\n        ]\n    },\n    \"118\": {\n        \"VPSPLANID\": \"118\",\n        \"name\": \"32768 MB RAM,4x110 GB SSD,40.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"110\",\n        \"bandwidth\": \"40.00\",\n        \"bandwidth_gb\": \"40960\",\n        \"price_per_month\": \"240.00\",\n        \"plan_type\": \"DEDICATED\",\n        \"windows\": false,\n        \"available_locations\": [\n            12\n        ]\n    },\n    \"201\": {\n        \"VPSPLANID\": \"201\",\n        \"name\": \"1024 MB RAM,25 GB SSD,1.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"1024\",\n        \"disk\": \"25\",\n        \"bandwidth\": \"1.00\",\n        \"bandwidth_gb\": \"1024\",\n        \"price_per_month\": \"5.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"202\": {\n        \"VPSPLANID\": \"202\",\n        \"name\": \"2048 MB RAM,55 GB SSD,2.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"2048\",\n        \"disk\": \"55\",\n        \"bandwidth\": \"2.00\",\n        \"bandwidth_gb\": \"2048\",\n        \"price_per_month\": \"10.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"203\": {\n        \"VPSPLANID\": \"203\",\n        \"name\": \"4096 MB RAM,80 GB SSD,3.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"4096\",\n        \"disk\": \"80\",\n        \"bandwidth\": \"3.00\",\n        \"bandwidth_gb\": \"3072\",\n        \"price_per_month\": \"20.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"204\": {\n        \"VPSPLANID\": \"204\",\n        \"name\": \"8192 MB RAM,160 GB SSD,4.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"8192\",\n        \"disk\": \"160\",\n        \"bandwidth\": \"4.00\",\n        \"bandwidth_gb\": \"4096\",\n        \"price_per_month\": \"40.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"205\": {\n        \"VPSPLANID\": \"205\",\n        \"name\": \"16384 MB RAM,320 GB SSD,5.00 TB BW\",\n        \"vcpu_count\": \"6\",\n        \"ram\": \"16384\",\n        \"disk\": \"320\",\n        \"bandwidth\": \"5.00\",\n        \"bandwidth_gb\": \"5120\",\n        \"price_per_month\": \"80.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"206\": {\n        \"VPSPLANID\": \"206\",\n        \"name\": \"32768 MB RAM,640 GB SSD,6.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"640\",\n        \"bandwidth\": \"6.00\",\n        \"bandwidth_gb\": \"6144\",\n        \"price_per_month\": \"160.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            8,\n            9,\n            12,\n            19,\n            22,\n            24,\n            25,\n            39,\n            40\n        ]\n    },\n    \"207\": {\n        \"VPSPLANID\": \"207\",\n        \"name\": \"65536 MB RAM,1280 GB SSD,10.00 TB BW\",\n        \"vcpu_count\": \"16\",\n        \"ram\": \"65536\",\n        \"disk\": \"1280\",\n        \"bandwidth\": \"10.00\",\n        \"bandwidth_gb\": \"10240\",\n        \"price_per_month\": \"320.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            2,\n            3,\n            5,\n            6,\n            12,\n            19,\n            22,\n            25,\n            39,\n            40\n        ]\n    },\n    \"208\": {\n        \"VPSPLANID\": \"208\",\n        \"name\": \"98304 MB RAM,1600 GB SSD,15.00 TB BW\",\n        \"vcpu_count\": \"24\",\n        \"ram\": \"98304\",\n        \"disk\": \"1600\",\n        \"bandwidth\": \"15.00\",\n        \"bandwidth_gb\": \"15360\",\n        \"price_per_month\": \"640.00\",\n        \"plan_type\": \"SSD\",\n        \"windows\": false,\n        \"available_locations\": [\n            12,\n            22\n        ]\n    },\n    \"400\": {\n        \"VPSPLANID\": \"400\",\n        \"name\": \"1024 MB RAM,32 GB SSD,1.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"1024\",\n        \"disk\": \"32\",\n        \"bandwidth\": \"1.00\",\n        \"bandwidth_gb\": \"1024\",\n        \"price_per_month\": \"6.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"401\": {\n        \"VPSPLANID\": \"401\",\n        \"name\": \"2048 MB RAM,64 GB SSD,2.00 TB BW\",\n        \"vcpu_count\": \"1\",\n        \"ram\": \"2048\",\n        \"disk\": \"64\",\n        \"bandwidth\": \"2.00\",\n        \"bandwidth_gb\": \"2048\",\n        \"price_per_month\": \"12.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"402\": {\n        \"VPSPLANID\": \"402\",\n        \"name\": \"4096 MB RAM,128 GB SSD,3.00 TB BW\",\n        \"vcpu_count\": \"2\",\n        \"ram\": \"4096\",\n        \"disk\": \"128\",\n        \"bandwidth\": \"3.00\",\n        \"bandwidth_gb\": \"3072\",\n        \"price_per_month\": \"24.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"403\": {\n        \"VPSPLANID\": \"403\",\n        \"name\": \"8192 MB RAM,256 GB SSD,4.00 TB BW\",\n        \"vcpu_count\": \"3\",\n        \"ram\": \"8192\",\n        \"disk\": \"256\",\n        \"bandwidth\": \"4.00\",\n        \"bandwidth_gb\": \"4096\",\n        \"price_per_month\": \"48.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"404\": {\n        \"VPSPLANID\": \"404\",\n        \"name\": \"16384 MB RAM,384 GB SSD,5.00 TB BW\",\n        \"vcpu_count\": \"4\",\n        \"ram\": \"16384\",\n        \"disk\": \"384\",\n        \"bandwidth\": \"5.00\",\n        \"bandwidth_gb\": \"5120\",\n        \"price_per_month\": \"96.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"405\": {\n        \"VPSPLANID\": \"405\",\n        \"name\": \"32768 MB RAM,512 GB SSD,6.00 TB BW\",\n        \"vcpu_count\": \"8\",\n        \"ram\": \"32768\",\n        \"disk\": \"512\",\n        \"bandwidth\": \"6.00\",\n        \"bandwidth_gb\": \"6144\",\n        \"price_per_month\": \"192.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            1,\n            2,\n            3,\n            4,\n            5,\n            6,\n            7,\n            12,\n            19,\n            25,\n            39\n        ]\n    },\n    \"406\": {\n        \"VPSPLANID\": \"406\",\n        \"name\": \"49152 MB RAM,768 GB SSD,8.00 TB BW\",\n        \"vcpu_count\": \"12\",\n        \"ram\": \"49152\",\n        \"disk\": \"768\",\n        \"bandwidth\": \"8.00\",\n        \"bandwidth_gb\": \"8192\",\n        \"price_per_month\": \"256.00\",\n        \"plan_type\": \"HIGHFREQUENCY\",\n        \"windows\": false,\n        \"available_locations\": [\n            4,\n            5,\n            19,\n            39\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Server Size 服务器价格 V2",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v2/plans",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v2",
+								"plans"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Server Size 服务器价格 V2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "API-Key",
+										"type": "text",
+										"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://api.vultr.com/v2/plans",
+									"protocol": "https",
+									"host": [
+										"api",
+										"vultr",
+										"com"
+									],
+									"path": [
+										"v2",
+										"plans"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 10 Sep 2021 02:57:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Expires",
+									"value": "Fri, 10 Sep 2021 02:57:27 GMT"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex,noarchive"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"plans\": [\n        {\n            \"id\": \"vc2-1c-1gb\",\n            \"vcpu_count\": 1,\n            \"ram\": 1024,\n            \"disk\": 25,\n            \"disk_count\": 1,\n            \"bandwidth\": 1024,\n            \"monthly_cost\": 5,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-1c-2gb\",\n            \"vcpu_count\": 1,\n            \"ram\": 2048,\n            \"disk\": 55,\n            \"disk_count\": 1,\n            \"bandwidth\": 2048,\n            \"monthly_cost\": 10,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-2c-4gb\",\n            \"vcpu_count\": 2,\n            \"ram\": 4096,\n            \"disk\": 80,\n            \"disk_count\": 1,\n            \"bandwidth\": 3072,\n            \"monthly_cost\": 20,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-4c-8gb\",\n            \"vcpu_count\": 4,\n            \"ram\": 8192,\n            \"disk\": 160,\n            \"disk_count\": 1,\n            \"bandwidth\": 4096,\n            \"monthly_cost\": 40,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-6c-16gb\",\n            \"vcpu_count\": 6,\n            \"ram\": 16384,\n            \"disk\": 320,\n            \"disk_count\": 1,\n            \"bandwidth\": 5120,\n            \"monthly_cost\": 80,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-8c-32gb\",\n            \"vcpu_count\": 8,\n            \"ram\": 32768,\n            \"disk\": 640,\n            \"disk_count\": 1,\n            \"bandwidth\": 6144,\n            \"monthly_cost\": 160,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-16c-64gb\",\n            \"vcpu_count\": 16,\n            \"ram\": 65536,\n            \"disk\": 1280,\n            \"disk_count\": 1,\n            \"bandwidth\": 10240,\n            \"monthly_cost\": 320,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"sea\",\n                \"lax\",\n                \"ams\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vc2-24c-96gb\",\n            \"vcpu_count\": 24,\n            \"ram\": 98304,\n            \"disk\": 1600,\n            \"disk_count\": 1,\n            \"bandwidth\": 15360,\n            \"monthly_cost\": 640,\n            \"type\": \"vc2\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"sea\",\n                \"lax\",\n                \"ams\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\"\n            ]\n        },\n        {\n            \"id\": \"vdc-2vcpu-8gb\",\n            \"vcpu_count\": 2,\n            \"ram\": 8192,\n            \"disk\": 110,\n            \"disk_count\": 1,\n            \"bandwidth\": 10240,\n            \"monthly_cost\": 60,\n            \"type\": \"vdc\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"lax\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"nrt\",\n                \"mia\"\n            ]\n        },\n        {\n            \"id\": \"vdc-4vcpu-16gb\",\n            \"vcpu_count\": 4,\n            \"ram\": 16384,\n            \"disk\": 110,\n            \"disk_count\": 2,\n            \"bandwidth\": 20480,\n            \"monthly_cost\": 120,\n            \"type\": \"vdc\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sjc\",\n                \"syd\",\n                \"nrt\"\n            ]\n        },\n        {\n            \"id\": \"vdc-6vcpu-24gb\",\n            \"vcpu_count\": 6,\n            \"ram\": 24576,\n            \"disk\": 110,\n            \"disk_count\": 3,\n            \"bandwidth\": 30720,\n            \"monthly_cost\": 180,\n            \"type\": \"vdc\",\n            \"locations\": [\n                \"ewr\"\n            ]\n        },\n        {\n            \"id\": \"vdc-8vcpu-32gb\",\n            \"vcpu_count\": 8,\n            \"ram\": 32768,\n            \"disk\": 110,\n            \"disk_count\": 4,\n            \"bandwidth\": 40960,\n            \"monthly_cost\": 240,\n            \"type\": \"vdc\",\n            \"locations\": [\n                \"ewr\"\n            ]\n        },\n        {\n            \"id\": \"vhf-1c-1gb\",\n            \"vcpu_count\": 1,\n            \"ram\": 1024,\n            \"disk\": 32,\n            \"disk_count\": 1,\n            \"bandwidth\": 1024,\n            \"monthly_cost\": 6,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-1c-2gb\",\n            \"vcpu_count\": 1,\n            \"ram\": 2048,\n            \"disk\": 64,\n            \"disk_count\": 1,\n            \"bandwidth\": 2048,\n            \"monthly_cost\": 12,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-2c-2gb\",\n            \"vcpu_count\": 2,\n            \"ram\": 2048,\n            \"disk\": 80,\n            \"disk_count\": 1,\n            \"bandwidth\": 3072,\n            \"monthly_cost\": 18,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"lhr\",\n                \"fra\",\n                \"sjc\",\n                \"syd\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-2c-4gb\",\n            \"vcpu_count\": 2,\n            \"ram\": 4096,\n            \"disk\": 128,\n            \"disk_count\": 1,\n            \"bandwidth\": 3072,\n            \"monthly_cost\": 24,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"fra\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"mia\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-3c-8gb\",\n            \"vcpu_count\": 3,\n            \"ram\": 8192,\n            \"disk\": 256,\n            \"disk_count\": 1,\n            \"bandwidth\": 4096,\n            \"monthly_cost\": 48,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"dfw\",\n                \"sea\",\n                \"lax\",\n                \"atl\",\n                \"ams\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"nrt\",\n                \"icn\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-4c-16gb\",\n            \"vcpu_count\": 4,\n            \"ram\": 16384,\n            \"disk\": 384,\n            \"disk_count\": 1,\n            \"bandwidth\": 5120,\n            \"monthly_cost\": 96,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"sea\",\n                \"atl\",\n                \"ams\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"icn\",\n                \"sgp\"\n            ]\n        },\n        {\n            \"id\": \"vhf-6c-24gb\",\n            \"vcpu_count\": 6,\n            \"ram\": 24576,\n            \"disk\": 448,\n            \"disk_count\": 1,\n            \"bandwidth\": 6144,\n            \"monthly_cost\": 144,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"sea\",\n                \"atl\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"icn\"\n            ]\n        },\n        {\n            \"id\": \"vhf-8c-32gb\",\n            \"vcpu_count\": 8,\n            \"ram\": 32768,\n            \"disk\": 512,\n            \"disk_count\": 1,\n            \"bandwidth\": 7168,\n            \"monthly_cost\": 192,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"ord\",\n                \"sea\",\n                \"atl\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"icn\"\n            ]\n        },\n        {\n            \"id\": \"vhf-12c-48gb\",\n            \"vcpu_count\": 12,\n            \"ram\": 49152,\n            \"disk\": 768,\n            \"disk_count\": 1,\n            \"bandwidth\": 8192,\n            \"monthly_cost\": 256,\n            \"type\": \"vhf\",\n            \"locations\": [\n                \"ewr\",\n                \"atl\",\n                \"sjc\",\n                \"yto\",\n                \"cdg\",\n                \"icn\"\n            ]\n        }\n    ],\n    \"meta\": {\n        \"total\": 21,\n        \"links\": {\n            \"next\": \"\",\n            \"prev\": \"\"\n        }\n    }\n}"
 						}
 					]
 				},
@@ -903,115 +1149,6 @@
 			},
 			"response": [
 				{
-					"name": "创建启动脚本",
-					"originalRequest": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "API-Key",
-								"type": "text",
-								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
-							},
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text",
-								"disabled": true
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "name",
-									"value": "docker-nginx",
-									"type": "text"
-								},
-								{
-									"key": "type",
-									"value": "pxe",
-									"type": "text"
-								},
-								{
-									"key": "script",
-									"value": "#!/bin/bash\ncurl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-nginx.sh | sh",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "https://api.vultr.com/v1/startupscript/create",
-							"protocol": "https",
-							"host": [
-								"api",
-								"vultr",
-								"com"
-							],
-							"path": [
-								"v1",
-								"startupscript",
-								"create"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Server",
-							"value": "nginx"
-						},
-						{
-							"key": "Date",
-							"value": "Sat, 03 Aug 2019 14:35:02 GMT"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "X-User",
-							"value": "878455649@qq.com"
-						},
-						{
-							"key": "Expires",
-							"value": "Sat, 03 Aug 2019 14:35:01 GMT"
-						},
-						{
-							"key": "Cache-Control",
-							"value": "no-cache"
-						},
-						{
-							"key": "X-Frame-Options",
-							"value": "DENY"
-						},
-						{
-							"key": "Strict-Transport-Security",
-							"value": "max-age=31536000"
-						},
-						{
-							"key": "X-Content-Type-Options",
-							"value": "nosniff"
-						},
-						{
-							"key": "Content-Encoding",
-							"value": "gzip"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"SCRIPTID\": 564303\n}"
-				},
-				{
 					"name": "创建启动脚本ssr",
 					"originalRequest": {
 						"method": "POST",
@@ -1119,6 +1256,115 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"SCRIPTID\": 564306\n}"
+				},
+				{
+					"name": "创建启动脚本",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "API-Key",
+								"type": "text",
+								"value": "COYMFNSGL33V2EFFS5CYMPQ2FCA3TC53SVXQ"
+							},
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "docker-nginx",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "pxe",
+									"type": "text"
+								},
+								{
+									"key": "script",
+									"value": "#!/bin/bash\ncurl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-nginx.sh | sh",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://api.vultr.com/v1/startupscript/create",
+							"protocol": "https",
+							"host": [
+								"api",
+								"vultr",
+								"com"
+							],
+							"path": [
+								"v1",
+								"startupscript",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Aug 2019 14:35:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-User",
+							"value": "878455649@qq.com"
+						},
+						{
+							"key": "Expires",
+							"value": "Sat, 03 Aug 2019 14:35:01 GMT"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=31536000"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"SCRIPTID\": 564303\n}"
 				}
 			]
 		},
@@ -1319,7 +1565,7 @@
 						}
 					],
 					"cookie": [],
-					"body": null
+					"body": ""
 				}
 			]
 		},

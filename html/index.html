@@ -13,9 +13,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="./css/sunlogo.jpg" type="image/x-icon" />
-    <link rel="shortcut icon" href="./css/sunlogo.jpg">
-    <link rel="Bookmark" href="./css/sunlogo.jpg">
+    <!-- <link rel="icon" href="./css/sunlogo.jpg" type="image/x-icon" /> -->
+    <!-- <link rel="shortcut icon" href="./css/sunlogo.jpg">
+    <link rel="Bookmark" href="./css/sunlogo.jpg"> -->
+    <link rel="icon" href="http://web.qiniu.disanshijie.top/img/sunlogo.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="http://web.qiniu.disanshijie.top/img/sunlogo.jpg">
+    <link rel="Bookmark" href="http://web.qiniu.disanshijie.top/img/sunlogo.jpg">
 
     <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
     <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
@@ -40,7 +43,7 @@
         <div>
             <h3>购买</h3>
             <form action="" method="post" id="serverCreate">
-                <select class="select-server-plan" name="DCID">
+                <select class="select-server-dcid" name="DCID">
                     <option value="1" selected>纽约
                     <option value="5">洛杉矶
                     <option value="25">日本
@@ -49,10 +52,14 @@
                     <option value="34">韩国
                     <option value="40">新加坡
                 </select>
-                <select class="select-server-plan" name="OSID">
-                    <option value="167" selected>centos7
+                <select class="select-server-plan osid" name="OSID">
+                    <option value="167">centos7
                     <option value="193">debian8
                     <option value="270">ubuntu18
+                    <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" selected>ssr快照
+                    <option note="使用预构建映像" value="186" data="17" >Docker on CentOS 7 x64
+                    <option note="使用预构建映像" value="186" data="37" >Docker on Ubuntu 20.04 x64
+                    <option note="使用ISO创建服务器" value="159" data="" >自定义镜像
                 </select>
                 <select class="select-server-plan" name="VPSPLANID">
                     <option value="200" selected>$3.50
@@ -61,8 +68,8 @@
                     <option value="199">$2.50
                 </select>
 
-                <input type="hidden" name="SCRIPTID" class="scriptid">
                 <input type="hidden" name="enable_ipv6" value="yes">
+                <input type="hidden" name="SCRIPTID" class="scriptid">
                 <input type="button" value="购买" onclick="serverCreate(this)">
             </form>
             <div>
