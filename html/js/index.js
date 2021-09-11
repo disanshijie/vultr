@@ -102,8 +102,10 @@ var serverList = (data) => {
             str += '	<li>系统：<a class="a-price">' + data[key].os + '</a></li>';
             str += '	<li>IPv6：<a class="a-price">' + data[key].v6_main_ip + '</a></li>';
             str += '	<li>创建时间：<a class="a-date">' + data[key].date_created + '</a></li>';
+            str += '	<li><a class="a-control" href="' + data[key].main_ip + '" target="_blank">搜索引擎</a></li>';
+            str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip:8010 + '/index.html" target="_blank">测试</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
-            str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
+            str += '	<li></li>';
             str += '	<button onclick="serverReboot(' + key + ')">重启</button>';
             str += '	<button onclick="serverReinstall(' + key + ')">重装</button>';
             str += '	<button onclick="serverDestroy(' + key + ')">销毁</button>';

@@ -17,8 +17,8 @@ docker_nginx(){
     #删除容器
     #docker stop nginx
     #docker rm -f nginx
-    #运行
-    docker run -d -p 80:80 -p 443:443 -v $dirname:/usr/share/nginx/html --name nginx --restart=always nginx
+    #运行 改成8010 80给searx用
+    docker run -d -p 8010:80 -p 443:443 -v $dirname:/usr/share/nginx/html --name nginx --restart=always nginx
 
 }
 
