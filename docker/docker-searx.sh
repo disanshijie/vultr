@@ -17,7 +17,7 @@ docker_searx(){
     #docker stop searx
     #docker rm -f searx
     #运行
-    docker run --rm -d --name searx --restart=always -v $dirname:/etc/searx -p 80:8080 searx/searx
+    docker run -d --name searx --restart=always -v $dirname:/etc/searx -p 80:8080 searx/searx
 
 }
 
