@@ -46,11 +46,20 @@ function ajaxRequest(type, url, params, callback) {
         url: url,
         data: params,
         dataType: 'JSON',
+        timeout:10000, //设置超时的时间10s
         async: false, //请求是否异步，默认为异步
         type: type,
         beforeSend: function(request) {
             request.setRequestHeader("API-Key", getApiKey());
         },
+        //调用执行后调用的函数，无论成功或失败都调用
+        complete: function (XMLHttpRequest, textStatus) {
+            if(textStatus == 'timeout'){
+                if (error_callback != null && error_callback != "") {            
+                    error_callback();
+                };
+            }
+        },        
         success: function(list) {
             callback(list);
         },
@@ -150,6 +159,8 @@ function serverCreate() {
             str = res;
         }
         $("#buyResult").html("购买结果：" + str);
+        //查询一下结果
+        getServerList();
     })
 }
 

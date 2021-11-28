@@ -23,54 +23,69 @@
     <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
     <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
     <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/javascript" src="./js/index.js?v=123"></script>
+    <script type="text/javascript" src="./js/aliyun.js?v=123"></script>
 </head>
 
 <body>
 
     <div id="contact">
-        <h5 style="float: right;"><a href="https://www.vultr.com/?ref=7384523" target="_blank">vultr官网 </a></h5>
+        <h5 style="float: right;"><a href="https://www.aliyun.com/?ref=7384523" target="_blank">阿里云官网 </a></h5>
         <h3>常量</h3>
         <div>
             <div class="box-in">
-                <p class="tag-in">apikey </p><input class="text-in" type="text" name="" id="apikey" value="" placeholder="apikey"></div>
-            <div class="box-in">
-                <p class="tag-in">SUBID</p><input class="text-in" type="text" name="" id="subid" value="" placeholder="SUBID"></div>
-            <div class="box-in">
-                <p class="tag-in">SCRIPTID</p><input class="text-in" type="text" name="" id="scriptid" value="" placeholder="SCRIPTID"></div>
+                <p class="tag-in">apikey </p><input class="text-in" type="text" name="" id="apikey" value="2312" placeholder="apikey"></div>
 
         </div>
         <div>
             <h3>购买</h3>
             <form action="" method="post" id="serverCreate">
-                <select class="select-server-dcid" name="DCID">
-                    <option value="1" selected>纽约
-                    <option value="5">洛杉矶
-                    <option value="25">日本
-                    <option value="2">Chicago
-                    <option value="3">Dallas
-                    <option value="34">韩国
-                    <option value="40">新加坡
+                <select class="select-server-region region" name="regionId">
+                    <option value="ap-southeast-1" data="oss" >新加坡OSS
+                    
+                    <option value="cn-hongkong" data="" selected>香港
+                    <option value="ap-southeast-1" data="" >新加坡
+                    <option value="4" data="" >日本
                 </select>
-                <select class="select-server-plan osid" name="OSID">
+                <select class="select-server-plan imageId" name="imageId">
+                    <option note="默认使用镜像" value="" data="17" selected>Docker on CentOS 7 x64
+          <!--           
+ <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" >新加坡oss
                     <option value="167">centos7
                     <option value="193">debian8
                     <option value="270">ubuntu18
-                    <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" selected>ssr快照
-                    <option note="使用预构建映像" value="186" data="17" >Docker on CentOS 7 x64
-                    <option note="使用预构建映像" value="186" data="37" >Docker on Ubuntu 20.04 x64
-                    <option note="使用ISO创建服务器" value="159" data="" >自定义镜像
+ -->
                 </select>
-                <select class="select-server-plan" name="VPSPLANID">
-                    <option value="200" selected>$3.50
-                    <option value="201">$5.00
-                    <option value="400">$6.00
-                    <option value="199">$2.50
-                </select>
+                <select class="select-server-plan instanceType" name="instanceType">
+                        <option note="共享计算型 n1"  value="ecs.n1.tiny" data="1 vCPU	1 GiB" selected>1 vCPU,1 GiB/0.021￥
+                        <option note="突发性能实例 t6"  value="ecs.t6-c2m1.large" data="2 vCPU	1 GiB" >2 vCPU,1 GiB/0.028￥
+                        <option note="共享计算型 n1"  value="ecs.n1.small" data="1 vCPU	2 GiB" >1 vCPU,2 GiB/0.031￥
+                        <option note="突发性能实例 t5" value="ecs.t5-lc1m2.small" data="2 vCPU	2 GiB" >1 vCPU,2 GiB/0.038￥
+                        <option note="突发性能实例 t6" value="ecs.t6-c1m1.large" data="2 vCPU	2 GiB" >2 vCPU,2 GiB/0.044￥
+                        <option note="突发性能实例 t5" value="ecs.t5-c1m1.large" data="2 vCPU	2 GiB" >2 vCPU,2 GiB/0.056￥
+    
+                    </select>
+                <select class="select-server-plan autoReleaseTime" name="">
+                        <option note=""  value="" selected >自动
+                        <option note=""  value="1" >1小时
+                        <option note="" value="2" >2小时
+                        <option note="" value="3" >3小时
+                        <option note="" value="4" >4小时
+                        <option note="" value="5" >5小时
+                        <option note="" value="10" >10小时
+                    </select>
 
-                <input type="hidden" name="enable_ipv6" value="yes">
-                <input type="hidden" name="SCRIPTID" class="scriptid">
+<div>
+ <p><textarea name="userData" id="J_userData" cols="30" rows="10" placeholder="userData"></textarea></p>
+</div>
+                     
+<div>
+                <p >更新dns:<input note="自动更新dns" type="checkbox" value="search" name="dns" checked style="width:2%"/>search</p>
+                </div>
+                <div> 
                 <input type="button" value="购买" onclick="serverCreate(this)">
+                <input type="button" value="重买" onclick="serverUpdate(this)">
+                </div>
+               
             </form>
             <div>
                 <p id="buyResult"></p>
@@ -79,6 +94,17 @@
 
         <div>
             <h3>服务器</h3>
+                        <div class="box-in">
+                <p class="tag-in">区域</p>
+                <select class="list-server-region region" id="J_regionId">
+                    <option value="" data="" selected>请选择
+                    
+                    <option value="cn-hongkong" data="" >香港
+                    <option value="ap-southeast-1" data="" selected >新加坡
+                    <option value="4" data="" >日本
+                </select>
+                </div>
+
             <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
             <div class="box-server-list" id="server-list">
                 <!-- 
@@ -94,37 +120,6 @@
             </div>
         </div>
 
-        <div>
-            <h3>脚本</h3>
-            <div class="box-in"><input type="button" value="新建脚本" onclick="newStartupscript()"></div>
-            <form action="" method="post" id="startupscriptForm" style="display:none;">
-                <input class="text-in" type="text" name="name" id="J_name" value="" placeholder="name">
-                <input class="text-in" type="text" name="type" id="J_type" value="" placeholder="boot或者pxe">
-                <!-- <input class="text-in" type="text" name="script" id="J_script" value="" placeholder="script"> -->
-                <textarea name="script" id="J_script" cols="30" rows="10" placeholder="script"></textarea>
-                <br>
-                <input id="startupscriptSubmit" type="button" value="提交" onclick="startupscriptCreate(this)" style="width: 25%;">
-                <input type="button" value="取消" onclick="displayStartupscript(this)" style="width: 25%;">
-            </form>
-
-            </br>
-            <div class="box-in"><input type="button" value="获取脚本列表" onclick="startupscriptList()"></div>
-            <div class="box-list" id="scriptList">
-                <table class="" cellspacing="0" cellpadding="0">
-                    <thead>
-                        <tr>
-                            <td>SCRIPTID</td>
-                            <td>name</td>
-                            <td>type</td>
-                            <td>script</td>
-                            <td>操作 opear</td>
-                        </tr>
-                    </thead>
-                    <tbody id="scriptIdList">
-                    </tbody>
-                </table>
-            </div>
-        </div>
         <!-- 
         <div>
             <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
@@ -152,18 +147,13 @@
             if (index && index.length > 5) {
                 let pars = index.split("&");
                 $("#apikey").val(pars[0]);
-                $("#scriptid").val(pars[1]);
+                $("#regionId").val(pars[1]);
             }
         }
     }
 
-    function copyScript(SCRIPTID) {
-        $("#scriptid").val(SCRIPTID);
-        alert("应用成功！");
-    }
-
-    function copySubid(subid) {
-        $("#subid").val(subid);
+    function copySubid(params) {
+        
     }
 
     function newStartupscript() {
