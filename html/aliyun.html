@@ -74,18 +74,18 @@
                         <option note="" value="10" >10小时
                     </select>
 
-<div>
- <p><textarea name="userData" id="J_userData" cols="30" rows="10" placeholder="userData"></textarea></p>
-</div>
-                     
-<div>
-                <p >更新dns:<input note="自动更新dns" type="checkbox" value="search" name="dns" checked style="width:2%"/>search</p>
+                <div>
+                    <p><textarea name="userData" id="J_userData" cols="30" rows="10" placeholder="userData"></textarea></p>
                 </div>
-                <div> 
-                <input type="button" value="购买" onclick="serverCreate(this)">
-                <input type="button" value="重买" onclick="serverUpdate(this)">
+
+                <div>
+                    <p>更新dns:<input note="自动更新dns" type="checkbox" value="search" name="dns" checked style="width:2%" />search</p>
                 </div>
-               
+                <div>
+                    <input type="button" value="购买" onclick="serverCreate(this)">
+                    <input type="button" value="重买" onclick="serverUpdate(this)">
+                </div>
+
             </form>
             <div>
                 <p id="buyResult"></p>
@@ -94,7 +94,7 @@
 
         <div>
             <h3>服务器</h3>
-                        <div class="box-in">
+            <div class="box-in">
                 <p class="tag-in">区域</p>
                 <select class="list-server-region region" id="J_regionId">
                     <option value="" data="" selected>请选择
@@ -103,7 +103,7 @@
                     <option value="ap-southeast-1" data="" selected >新加坡
                     <option value="4" data="" >日本
                 </select>
-                </div>
+            </div>
 
             <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
             <div class="box-server-list" id="server-list">
@@ -138,6 +138,8 @@
         //初始化绑定事件
         //pageEventInit();
         getUrlApiKey();
+        //自动刷新一下 服务器列表
+        getServerList();
     });
 
     function getUrlApiKey() {
@@ -153,7 +155,7 @@
     }
 
     function copySubid(params) {
-        
+
     }
 
     function newStartupscript() {

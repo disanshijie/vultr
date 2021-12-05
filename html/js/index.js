@@ -46,20 +46,20 @@ function ajaxRequest(type, url, params, callback) {
         url: url,
         data: params,
         dataType: 'JSON',
-        timeout:10000, //设置超时的时间10s
+        timeout: 10000, //设置超时的时间10s
         async: false, //请求是否异步，默认为异步
         type: type,
         beforeSend: function(request) {
             request.setRequestHeader("API-Key", getApiKey());
         },
         //调用执行后调用的函数，无论成功或失败都调用
-        complete: function (XMLHttpRequest, textStatus) {
-            if(textStatus == 'timeout'){
-                if (error_callback != null && error_callback != "") {            
+        complete: function(XMLHttpRequest, textStatus) {
+            if (textStatus == 'timeout') {
+                if (error_callback != null && error_callback != "") {
                     error_callback();
                 };
             }
-        },        
+        },
         success: function(list) {
             callback(list);
         },
@@ -84,15 +84,16 @@ function getServerList(params) {
     constant.oldTime = new Date();
     let timeStr = "<p>距上次刷新" + time + "秒</p>";
     ajaxGet(httpUrl.server_list, null, function(res) {
-        let str = timeStr + "<p style='color:red;'>没有...</p>";
+        let str = "<p style='color:red;'>获取数据失败...</p>";
         if (res) {
-            if (res.length == 0) {} else {
-                str = timeStr + serverList(res);
+            if (res.length == 0) {
+                str = "<p style='color:red;'>没有...</p>";
+            } else {
+                str = serverList(res);
             }
         }
-        $("#server-list").html(str);
+        $("#server-list").html(htmltimeStr + str);
         ////setTimeout(function() {}, 5 * 1000);
-
     })
 }
 
@@ -111,7 +112,7 @@ var serverList = (data) => {
             str += '	<li>系统：<a class="a-price">' + data[key].os + '</a></li>';
             str += '	<li>IPv6：<a class="a-price">' + data[key].v6_main_ip + '</a></li>';
             str += '	<li>创建时间：<a class="a-date">' + data[key].date_created + '</a></li>';
-           // str += '	<li><a class="a-control" href="' + data[key].main_ip + '" target="_blank">搜索引擎</a></li>';
+            // str += '	<li><a class="a-control" href="' + data[key].main_ip + '" target="_blank">搜索引擎</a></li>';
             str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
             str += '	<li></li>';
