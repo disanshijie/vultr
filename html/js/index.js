@@ -16,10 +16,16 @@ var httpUrl = {
     startupscript_create: constant.baseUrl + 'v1/startupscript/create', //创建启动脚本
     startupscript_destroy: constant.baseUrl + 'v1/startupscript/destroy', //创建启动脚本
     startupscript_list: constant.baseUrl + 'v1/startupscript/list', //获取启动脚本列表
+
+    dns_update: 'http://sunjc.top:7110/script/v1/dns/update', //更新DNS
 }
 
 function getApiKey() {
     return $("#apikey").val();
+}
+
+function getAppId() {
+    return $("#appid").val();
 }
 
 function getResult(data) {
@@ -51,6 +57,7 @@ function ajaxRequest(type, url, params, callback) {
         type: type,
         beforeSend: function(request) {
             request.setRequestHeader("API-Key", getApiKey());
+            request.setRequestHeader("appid", getAppId());
         },
         //调用执行后调用的函数，无论成功或失败都调用
         complete: function(XMLHttpRequest, textStatus) {
@@ -69,6 +76,46 @@ function ajaxRequest(type, url, params, callback) {
     });
 }
 
+/**自动更新 dns */
+function autoUpdateDns(subid) {
+    let maxTime = 5;
+    var fader = setInterval(function() {
+        ajaxGet(httpUrl.server_list, null, function(res) {
+            if (res && res.length != 0) {
+                let address = "";
+                let index = -1;
+                for (let key in res) {
+                    address = res[key].main_ip;
+                    index++;
+                }
+                if (address && address.length > 3 && address != "0.0.0.0") {
+                    let name = index == 0 ? "app" : "app" + index;
+                    updateDns(address, name);
+                    clearInterval(fader);
+                }
+            }
+        });
+        if (maxTime < 1) {
+            clearInterval(fader);
+        }
+        maxTime--;
+    }, 1000);
+}
+
+//更新dns
+function updateDns(ip, name) {
+    let param = "name=" + name + "&ip=" + ip + "&config=aliyunConfigUser2&domain=disanshijie.top";
+    ajaxGet(httpUrl.dns_update, param, function(res) {
+        let str = "";
+        if (res && res.code == 200) {
+            console.log("返回结果" + res.data);
+            alert("执行成功");
+            return;
+        } else {
+            str = res.msg;
+        }
+    });
+}
 
 function getPlansList(params) {
     ajaxGet(httpUrl.plans_list, null, function(res) {
@@ -92,7 +139,7 @@ function getServerList(params) {
                 str = serverList(res);
             }
         }
-        $("#server-list").html(htmltimeStr + str);
+        $("#server-list").html(timeStr + str);
         ////setTimeout(function() {}, 5 * 1000);
     })
 }
@@ -116,6 +163,7 @@ var serverList = (data) => {
             str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
             str += '	<li></li>';
+            str += '	<li><button style="width: 10%;" class="a-control" onclick="updateDns(\'' + data[key].main_ip + '\',\'app\')">更新DNS</button></li>';
             str += '	<button onclick="serverReboot(' + key + ')">重启</button>';
             str += '	<button onclick="serverReinstall(' + key + ')">重装</button>';
             str += '	<button onclick="serverDestroy(' + key + ')">销毁</button>';
@@ -173,6 +221,7 @@ function customIOS(params) {
     if (osid == '164') {
         params.pop();
         params.push({ name: "SNAPSHOTID", value: obj.attr("data") });
+        autoUpdateDns(); //自动更新dns
     } else if (osid == '159') { //ISOID
         params.push({ name: "ISOID", value: obj.attr("data") });
     } else if (osid == '186') { //APPID
@@ -181,6 +230,7 @@ function customIOS(params) {
     return params;
 
 }
+
 
 //重启
 function serverReboot(SUBID) {

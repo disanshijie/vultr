@@ -40,14 +40,15 @@
             <h3>购买</h3>
             <form action="" method="post" id="serverCreate">
                 <select class="select-server-region region" name="regionId">
-                    <option value="ap-southeast-1" data="oss" >新加坡OSS
+                    <option value="ap-southeast-1" data="oss" selected>新加坡OSS
                     
-                    <option value="cn-hongkong" data="" selected>香港
+                    <option value="cn-hongkong" data="" >香港
                     <option value="ap-southeast-1" data="" >新加坡
                     <option value="4" data="" >日本
                 </select>
                 <select class="select-server-plan imageId" name="imageId">
                     <option note="默认使用镜像" value="" data="17" selected>Docker on CentOS 7 x64
+                    <option note="自定义镜像(新加坡专用)" value="m-t4n6hvxc7zih63ztbn2w" data="27" selected>自定义镜像(新加坡专用)
           <!--           
  <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" >新加坡oss
                     <option value="167">centos7
@@ -128,6 +129,36 @@
             <textarea name="" id="outputinfo" cols="100px" rows="50px"></textarea>
         </div>
          -->
+        <div>
+            <p>------------------------------------------------------分割线-----------------------------------------------------------------------------------</p>
+        </div>
+        <div>
+            <form action="" method="get" id="updateDns">
+                <div>
+                    <input class="text-in" type="text" name="ip" id="J_ip" value="" placeholder="ip地址">
+                </div>
+                <div>
+                    <input class="text-in" type="text" name="name" id="J_name" value="app" placeholder="二级名称">
+                </div>
+                <div>
+                    <select class="select-server-plan J_domain" name="domain" placeholder="域名">
+                            <option note="sunjc.top" value="sunjc.top" data="" selected>sunjc.top
+                            <option note="disanshijie.top" value="disanshijie.top" data="" >disanshijie.top
+                        </select>
+                </div>
+                <div>
+                    <select class="select-server-plan J_config" name="config" placeholder="配置文件">
+                            <option note="默认" value="" data="" selected>默认
+                            <option note="用户2" value="aliyunConfigUser2" data="" >用户2
+                        </select>
+                </div>
+
+                <div>
+                    <input type="button" value="更新DNS" onclick="updateDns(this)">
+                </div>
+            </form>
+        </div>
+
     </div>
 </body>
 
