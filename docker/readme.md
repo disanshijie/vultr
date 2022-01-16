@@ -13,6 +13,17 @@ nginx ngork aria
 
 ## 说明
 
+### 科学上网v2ary+caddy
+
+```
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh
+```
+
+注意：需要定期更新pic.disanshijie.top和go.disanshijie.top这两个域名的证书
+
+
+
+
 ### **代理**
 
 #### **docker-nginx.sh**
@@ -38,7 +49,6 @@ nginx ngork aria
 > 混淆：plain
 >
 > ssr版客户端  [window](https://github.com/shadowsocksrr/shadowsocksr-csharp/releases) [android](https://github.com/shadowsocksrr/shadowsocksr-android)
->
 
 ### **离线下载**
 
