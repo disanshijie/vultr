@@ -286,7 +286,7 @@ function formatTime(currentTime, fmt) {
     for (var k in o) {
         if (new RegExp('(' + k + ')').test(fmt)) fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (('00' + o[k]).substr(('' + o[k]).length)))
     }
-    return fmt
+    return fmt;
 }
 
 /** 
@@ -322,3 +322,12 @@ function b64Decode() {
 }
 //let strChinaBase64 = b64Encode('你好'); // "JUU0JUJEJUEwJUU1JUE1JUJE"
 //console.log(b64Decode(strChinaBase64)); // "你好"
+
+
+function putShell(obj) {
+    let str = $(obj).parents(".J_shell").find("pre").html();
+    str = str.replaceAll("<br/>", '\r\n');
+    console.log(str);
+    let res = btoa(unescape(encodeURIComponent(str)));
+    $("#J_userData").val(res);
+}

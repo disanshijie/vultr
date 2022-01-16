@@ -20,12 +20,12 @@ httpsCertsUpload(){
 mkdir -p ~/caddy/certs
 cd ~/caddy/certs
 #pic.disanshijie.top的证书
-wget http://singapore.oss.sunjc.top/vpn/cert/pic.disanshijie.top.key
-wget http://singapore.oss.sunjc.top/vpn/cert/pic.disanshijie.top.crt
+wget http://singapore.oss.sunjc.top/vpn/cert/${CADDY_DOMAIN}.key
+wget http://singapore.oss.sunjc.top/vpn/cert/${CADDY_DOMAIN}.crt
 
 #go.disanshijie.top的证书
-wget http://singapore.oss.sunjc.top/vpn/cert/go.disanshijie.top.key
-wget http://singapore.oss.sunjc.top/vpn/cert/go.disanshijie.top.crt
+wget http://singapore.oss.sunjc.top/vpn/cert/${GOOGLE_DOMAIN}.key
+wget http://singapore.oss.sunjc.top/vpn/cert/${GOOGLE_DOMAIN}.crt
 
 }
 

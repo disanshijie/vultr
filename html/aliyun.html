@@ -49,7 +49,7 @@
                 </select>
                 <select class="select-server-plan imageId" name="imageId">
                     <option note="默认使用镜像" value="" data="17" selected>Docker on CentOS 7 x64
-                    <option note="自定义镜像(新加坡专用)" value="m-t4n6hvxc7zih63ztbn2w" data="27">自定义镜像(新加坡专用)
+                    <option note="自定义镜像(新加坡专用)" value="m-t4nj4glmbrnmtd0eo09e" data="27">自定义镜像(新加坡专用)
           <!--           
  <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" >新加坡oss
                     <option value="167">centos7
@@ -162,6 +162,14 @@
                     <input type="button" value="更新DNS" onclick="updateDns(this)">
                 </div>
             </form>
+        </div>
+        <div>
+            <p>------------------------------------------------------分割线-----------------------------------------------------------------------------------</p>
+        </div>
+        <div class="J_shell">
+            <pre>#!/bin/bash
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh</pre>
+            <div><input type="button" value="应用" onclick="putShell(this)"></div>
         </div>
 
     </div>
