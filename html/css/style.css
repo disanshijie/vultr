@@ -122,6 +122,17 @@ fieldset {
     resize: none;
 }
 
+
+/* 小号button */
+
+#contact .button-samll {
+    cursor: pointer;
+    width: 50px;
+    border: none;
+    background: #0CF;
+    color: #FFF;
+}
+
 #contact button {
     cursor: pointer;
     width: 50%;

@@ -1,7 +1,7 @@
 var constant = {
-    //baseUrl: 'https://api.vultr.com/',
     //baseUrl: 'http://localhost:2222/', //本地代理
     baseUrl: 'http://sunjc.top:7110/script/', //服务器代理
+    //baseUrl: 'http://localhost:8080/script/', //服务器代理
     oldTime: ""
 }
 
@@ -305,3 +305,20 @@ function set_select_checked(selectId, checkValue) {
         }
     }
 }
+
+//编码
+function b64Encode() {
+    let str = $("#J_userData").val();
+    //let res = btoa(encodeURIComponent(str));
+    let res = btoa(unescape(encodeURIComponent(str)));
+    $("#J_userData").val(res);
+}
+//解码
+function b64Decode() {
+    let str = $("#J_userData").val();
+    //let res = decodeURIComponent(atob(str));
+    let res = decodeURIComponent(escape(atob(str)));
+    $("#J_userData").val(res);
+}
+//let strChinaBase64 = b64Encode('你好'); // "JUU0JUJEJUEwJUU1JUE1JUJE"
+//console.log(b64Decode(strChinaBase64)); // "你好"

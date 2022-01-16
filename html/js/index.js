@@ -163,7 +163,7 @@ var serverList = (data) => {
             str += '	<li>状态：<a class="a-status">' + data[key].status + '</a> <a href="http://' + data[key].main_ip + '/index.html" target="_blank">测试</a></li>';
             str += '	<li><a class="a-control" href="' + data[key].kvm_url + '" target="_blank">打开控制台</a></li>';
             str += '	<li></li>';
-            str += '	<li><button style="width: 10%;" class="a-control" onclick="updateDns(\'' + data[key].main_ip + '\',\'app\')">更新DNS</button></li>';
+            str += '	<li><button class="button-samll a-control" onclick="updateDns(\'' + data[key].main_ip + '\',\'app\')">更新DNS</button></li>';
             str += '	<button onclick="serverReboot(' + key + ')">重启</button>';
             str += '	<button onclick="serverReinstall(' + key + ')">重装</button>';
             str += '	<button onclick="serverDestroy(' + key + ')">销毁</button>';

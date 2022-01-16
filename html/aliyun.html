@@ -22,7 +22,8 @@
 
     <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
     <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js?t=23546452345632"></script>
+    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
     <script type="text/javascript" src="./js/aliyun.js?v=123"></script>
 </head>
 
@@ -48,7 +49,7 @@
                 </select>
                 <select class="select-server-plan imageId" name="imageId">
                     <option note="默认使用镜像" value="" data="17" selected>Docker on CentOS 7 x64
-                    <option note="自定义镜像(新加坡专用)" value="m-t4n6hvxc7zih63ztbn2w" data="27" selected>自定义镜像(新加坡专用)
+                    <option note="自定义镜像(新加坡专用)" value="m-t4n6hvxc7zih63ztbn2w" data="27">自定义镜像(新加坡专用)
           <!--           
  <option note="使用快照创建服务器"  value="164" data="b82613ad0ad99" >新加坡oss
                     <option value="167">centos7
@@ -77,6 +78,10 @@
 
                 <div>
                     <p><textarea name="userData" id="J_userData" cols="30" rows="10" placeholder="userData"></textarea></p>
+                    <div>
+                        <input class="button-samll" type="button" value="编码" onclick="b64Encode(this)">
+                        <input class="button-samll" type="button" value="解码" onclick="b64Decode(this)">
+                    </div>
                 </div>
 
                 <div>
