@@ -22,7 +22,12 @@
 
     <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
     <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js?t=23546452345632"></script>
+    <script type="text/javascript">
+        document.write('<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js?v=' + Math.random() + '"><\/script>');
+    </script>
+    <!-- <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
+    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
     <script type="text/javascript" src="./js/aliyun.js?v=123"></script>
 </head>
@@ -41,10 +46,8 @@
             <h3>购买</h3>
             <form action="" method="post" id="serverCreate">
                 <select class="select-server-region region" name="regionId">
-                    <option value="ap-southeast-1" data="oss" selected>新加坡OSS
-                    
                     <option value="cn-hongkong" data="" >香港
-                    <option value="ap-southeast-1" data="" >新加坡
+                    <option value="ap-southeast-1" data="" selected>新加坡
                     <option value="4" data="" >日本
                 </select>
                 <select class="select-server-plan imageId" name="imageId">
@@ -135,7 +138,7 @@
         </div>
          -->
         <div>
-            <p>------------------------------------------------------分割线-----------------------------------------------------------------------------------</p>
+            <p>-----------分割线---------------</p>
         </div>
         <div>
             <form action="" method="get" id="updateDns">
@@ -164,11 +167,12 @@
             </form>
         </div>
         <div>
-            <p>------------------------------------------------------分割线-----------------------------------------------------------------------------------</p>
+            <p>-----------分割线---------------</p>
         </div>
         <div class="J_shell">
-            <pre>#!/bin/bash
-curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh</pre>
+            <textarea name="shell" cols="30" rows="10" placeholder="shell">#!/bin/bash
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh</textarea>
+            <pre></pre>
             <div><input type="button" value="应用" onclick="putShell(this)"></div>
         </div>
 

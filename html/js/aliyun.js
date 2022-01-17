@@ -323,11 +323,9 @@ function b64Decode() {
 //let strChinaBase64 = b64Encode('你好'); // "JUU0JUJEJUEwJUU1JUE1JUJE"
 //console.log(b64Decode(strChinaBase64)); // "你好"
 
-
+//应用当前脚本
 function putShell(obj) {
-    let str = $(obj).parents(".J_shell").find("pre").html();
-    str = str.replaceAll("<br/>", '\r\n');
-    console.log(str);
+    let str = $(obj).parents(".J_shell").find("textarea").val();
     let res = btoa(unescape(encodeURIComponent(str)));
     $("#J_userData").val(res);
 }
