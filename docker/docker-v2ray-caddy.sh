@@ -7,10 +7,10 @@
 #UUID=$(uuidgen)
 #V2RAY_PATH=${UUID:0:8} #截取8个字符
 UUID="260af679-adb3-8667-0503-7f1e89fa1e0d"
-CADDY_DOMAIN="pic.disanshijie.top"
+CADDY_DOMAIN=${1:-"pic.disanshijie.top"}
 V2RAY_PATH="Qg6tk2Guex" #截取8个字符
 
-GOOGLE_DOMAIN="go.disanshijie.top"
+GOOGLE_DOMAIN=${2:-"go.disanshijie.top"}
 
 #上传证书到服务器上
 httpsCertsUpload(){
