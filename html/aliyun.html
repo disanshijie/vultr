@@ -88,7 +88,7 @@
                 </div>
 
                 <div>
-                    <p>更新dns:<input note="自动更新dns" type="checkbox" value="search" name="dns" checked style="width:2%" />search</p>
+                    <p>更新dns:<input note="自动更新dns" type="checkbox" value="search" name="dns" style="width:2%" />search</p>
                 </div>
                 <div>
                     <input type="button" value="购买" onclick="serverCreate(this)">
@@ -171,7 +171,9 @@
         </div>
         <div class="J_shell">
             <textarea name="shell" cols="30" rows="10" placeholder="shell">#!/bin/bash
-curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh</textarea>
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/updateDns.sh | sh -s -- -a 3SJSFRPWXUJJKJTFZgKXAN6G2XAWM5NJQRFSA -n sunb,suna
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh -s sunb.disanshijie.top suna.disanshijie.top
+</textarea>
             <pre></pre>
             <div><input type="button" value="应用" onclick="putShell(this)"></div>
         </div>
