@@ -12,7 +12,7 @@ chmod 777 -R $dirname
 #aria2+webui
 #来源：https://github.com/XUJINKAI/aria2-with-webui
 # aria2 + webUI
-# 轻便 镜像小，但webui很简便
+# 轻便 镜像小，但webui很简便 24MB
 docker_aria2_with_webui(){
     #拉取
     docker pull xujinkai/aria2-with-webui:latest
@@ -30,7 +30,7 @@ docker_aria2_with_webui(){
 
 #来源：https://github.com/wahyd4/aria2-ariang-docker
 # aria2 + webUI
-# 功能全，镜像有点大100MB
+# 功能全，镜像有点大160MB
 # $1端口 $2令牌 $3$4
 docker_aria2_ariang_docker(){
     #拉取
