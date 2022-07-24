@@ -46,8 +46,10 @@ docker_aria2_with_webui(){
         -p 6801:80 \
         -p 6802:8080 \
         -v $dirname:/data \
-        -e SECRET=123456 \
+        -e SECRET='' \
         xujinkai/aria2-with-webui
+#如果要添加授权码可以
+-e SECRET=123456 \
 }
 
 #启动镜像
