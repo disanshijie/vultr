@@ -50,7 +50,7 @@ docker_aria2_with_webui(){
         -e SECRET='' \
         xujinkai/aria2-with-webui
 #如果要添加授权码可以
--e SECRET=123456 \
+#-e SECRET=123456 \
 }
 
 #启动镜像
