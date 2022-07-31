@@ -1,5 +1,6 @@
 #!/bin/bash
 #docker_安装v2ray+caddy
+#占用端口：80,443,
 #url_github=https://raw.githubusercontent.com/disanshijie
 #homePath=~
 #dirname=$homePath/v2ray
