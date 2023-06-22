@@ -67,6 +67,7 @@ docker run -d --privileged \
 
 #安装caddy（需要提前申请好证书）
 docker_caddy(){
+    rm -rf ~/caddy/www
     mkdir -p ~/caddy/{certs,logs,www}
     touch ~/caddy/Caddyfile
     chmod 777 ~/caddy/*
