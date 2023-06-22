@@ -18,6 +18,7 @@ httpsCertsUpload(){
 
 #apt-get install wget
 #yum install wget
+rm -rf ~/caddy/certs
 mkdir -p ~/caddy/certs
 cd ~/caddy/certs
 #pic.disanshijie.top的证书
