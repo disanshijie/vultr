@@ -156,7 +156,7 @@ docker run -d \
     abiosoft/caddy
 }
 
-function finish(){
+finish(){
     docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}"
     echo -e "\033[1;32m"
     echo "=================================================="
@@ -171,7 +171,7 @@ function finish(){
     echo -e "\033[0m"
 }
 
-function main(){
+main(){
 
 docker_v2ray
 httpsCertsUpload
