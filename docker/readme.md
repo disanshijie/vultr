@@ -17,6 +17,12 @@ nginx ngork aria
 
 ```
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh
+
+
+#!/bin/bash
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/updateDns.sh | sh -s -- -a 3SJSFRPWXUJJKJTFZgKXAN6G2XAWM5NJQRFSA -n sunb,suna
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh -s sunb.disanshijie.top suna.disanshijie.top
+
 ```
 
 注意：需要定期更新pic.disanshijie.top和go.disanshijie.top这两个域名的证书

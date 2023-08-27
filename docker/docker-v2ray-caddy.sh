@@ -113,8 +113,7 @@ ${GOOGLE_DOMAIN}:80 {
 	#删除容器
     docker rm -f caddy
 
-docker run -d \
-    --restart=always --name caddy \
+docker run -d --restart=always --name caddy \
     --link v2ray \
     -e "CADDYPATH=/etc/caddycerts" \
     -e "TZ=Asia/Shanghai" \
@@ -192,8 +191,7 @@ docker run -d \
 }
 
 
-
-function finish(){
+finish(){
     docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Image}}"
     echo -e "\033[1;32m"
     echo "=================================================="
@@ -209,7 +207,7 @@ function finish(){
 }
 
 
-function main(){
+main(){
 
 docker_v2ray
 httpsCertsUpload
