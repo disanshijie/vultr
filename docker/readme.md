@@ -20,7 +20,7 @@ nginx ngork aria
 ```
 #!/bin/bash
 aliddns_ak=LTAI5tN56G1t7ZsaGY3YC9eZ
-aliddns_sk=oFdsonMBqnguJ7h9NYaINimF4KVCzR
+aliddns_sk=oFdsonMBqnguJ7h9qYaINimF4KVCzt
 yum -y install bind-utils
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk suna disanshijie.top
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk sunb disanshijie.top
