@@ -15,10 +15,25 @@ nginx ngork aria
 
 ### 科学上网v2ary+caddy
 
+2023-08-27更新
+
+```
+#!/bin/bash
+aliddns_ak=LTAI5tN56G1t7ZsaGY3YC9eZ
+aliddns_sk=oFdsonMBqnguJ7h9NYaINimF4KVCzR
+yum -y install bind-utils
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk suna disanshijie.top
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk sunb disanshijie.top
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh -s sunb.disanshijie.top suna.disanshijie.top
+```
+
+2023-05-27更新
+
 ```
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh
+```
 
-
+```
 #!/bin/bash
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/updateDns.sh | sh -s -- -a 3SJSFRPWXUJJKJTFZgKXAN6G2XAWM5NJQRFSA -n sunb,suna
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh -s sunb.disanshijie.top suna.disanshijie.top

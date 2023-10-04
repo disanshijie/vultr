@@ -22,14 +22,15 @@
 
     <link rel="stylesheet" href="./css/style.css?v=123456" media="screen" type="text/css" />
     <!-- <script type="text/javascript" src="./js/jquery.min.js"></script> -->
-    <script type="text/javascript">
+    <!--     <script type="text/javascript">
         document.write('<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js?v=' + Math.random() + '"><\/script>');
-    </script>
+    </script> -->
     <!-- <script type="text/javascript" src="http://lib.sinaapp.com/js/jquery/2.0.2/jquery-2.0.2.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script> -->
     <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script> -->
-    <script type="text/javascript" src="./js/aliyun.js?v=123"></script>
+    <script type="text/javascript" src="./js/jquery.min.js?v=123"></script>
+    <script type="text/javascript" defer src="./js/aliyun.js?v=123"></script>
 </head>
 
 <body>
@@ -39,17 +40,46 @@
         <h3>常量</h3>
         <div>
             <div class="box-in">
-                <p class="tag-in">apikey </p><input class="text-in" type="text" name="" id="apikey" value="2312" placeholder="apikey"></div>
+                <p class="tag-in">domain </p>
+                <select id="J_domainId" class="select-server-domain domain" name="baseUrl" οnchange="updateBaseUrl()">
+                    <option value="http://192.168.199.130:8801/script/" data="" selected>192.168.199.130
+                    <option value="http://sunjc.top:7110/script/" data="" >sunjc.top
+                    <option value="http://192.168.199.103:8801/script/" data="" >192.168.199.103
+                    <option value="http://localhost:8801/script/" data="" >localhost
+                </select>
+            </div>
 
         </div>
         <div>
+            <div class="box-in">
+                <p class="tag-in">apikey </p><input class="text-in" type="text" name="" id="apikey" value="2312" placeholder="apikey"></div>
+
+        </div>
+
+
+        <div>
             <h3>购买</h3>
+
             <form action="" method="post" id="serverCreate">
-                <select class="select-server-region region" name="regionId">
+                <div class="box-in" style="display: flex;">
+                    <div>
+                        <input type="radio" id="radio-hongkong" name="regionId" style="width:20px;" value="cn-hongkong" checked />
+                        <label for="radio-hongkong">香港</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio-southeast" name="regionId" style="width:20px;" value="ap-southeast-1" />
+                        <label for="radio-southeast">新加坡</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="radio-japan" name="regionId" style="width:20px;" value="4" />
+                        <label for="radio-japan">日本</label>
+                    </div>
+                </div>
+                <!--                 <select class="select-server-region region" name="regionId">
                     <option value="cn-hongkong" data="" >香港
                     <option value="ap-southeast-1" data="" selected>新加坡
                     <option value="4" data="" >日本
-                </select>
+                </select> -->
                 <select class="select-server-plan imageId" name="imageId">
                     <option note="默认使用镜像" value="" data="17" selected>Docker on CentOS 7 x64
                     <option note="自定义镜像(新加坡专用)" value="m-t4nj4glmbrnmtd0eo09e" data="27">自定义镜像(新加坡专用)
@@ -103,15 +133,27 @@
 
         <div>
             <h3>服务器</h3>
-            <div class="box-in">
-                <p class="tag-in">区域</p>
-                <select class="list-server-region region" id="J_regionId">
+            <div class="box-in" style="display: flex;">
+                <p class="tag-in">区域：</p>
+                <!--               <select class="list-server-region region" id="J_regionId">
                     <option value="" data="" selected>请选择
                     
                     <option value="cn-hongkong" data="" >香港
                     <option value="ap-southeast-1" data="" selected >新加坡
                     <option value="4" data="" >日本
-                </select>
+                </select> -->
+                <div>
+                    <input type="checkbox" id="scales" name="cn-hongkong" style="width:20px;" checked />
+                    <label for="scales">香港</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="horns" name="ap-southeast-1" style="width:20px;" checked/>
+                    <label for="horns">新加坡</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="jepan" name="jepan" style="width:20px;" checked/>
+                    <label for="horns">日本</label>
+                </div>
             </div>
 
             <div class="box-in"><input type="button" value="获取服务器列表" onclick="getServerList()"></div>
@@ -171,7 +213,11 @@
         </div>
         <div class="J_shell">
             <textarea name="shell" cols="30" rows="10" placeholder="shell">#!/bin/bash
-curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/updateDns.sh | sh -s -- -a 3SJSFRPWXUJJKJTFZgKXAN6G2XAWM5NJQRFSA -n sunb,suna
+aliddns_ak=LTAI5tN56G1t7ZsaGY3YC9eZ
+aliddns_sk=oFdsonMBqnguJ7h9NYaINimF4KVCzR
+yum -y install bind-utils
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk suna disanshijie.top
+curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/linux/ddns_aliyun_v3.sh | sh -s $aliddns_ak $aliddns_sk sunb disanshijie.top
 curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/docker-v2ray-caddy.sh | sh -s sunb.disanshijie.top suna.disanshijie.top
 </textarea>
             <pre></pre>
@@ -183,13 +229,21 @@ curl -fsSL https://raw.githubusercontent.com/disanshijie/vultr/master/docker/doc
 
 </html>
 
-<script>
+<script defer>
     $(document).ready(function() {
         //初始化绑定事件
         //pageEventInit();
         getUrlApiKey();
+        // 初始化参数
+        getHttpUrl();
+
         //自动刷新一下 服务器列表
         getServerList();
+    });
+
+    $("#J_domainId").change(function() {
+        constant.baseUrl = document.getElementById("J_domainId").value;
+        getHttpUrl();
     });
 
     function getUrlApiKey() {

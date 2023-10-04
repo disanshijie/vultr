@@ -1,20 +1,29 @@
 var constant = {
-    //baseUrl: 'http://localhost:2222/', //本地代理
-    baseUrl: 'http://sunjc.top:7110/script/', //服务器代理
-    //baseUrl: 'http://localhost:8080/script/', //服务器代理
-    oldTime: ""
+    //baseUrl: 'http://sunjc.top:7110/script/', //服务器代理
+    //baseUrl: 'http://localhost:8801/script/', //服务器代理
+    baseUrl: 'http://192.168.199.130:8801/script/', //服务器代理
+    oldTime: "",
+    regionList: [
+        { name: "日本", val: "4" },
+        { name: "新加坡", val: "ap-southeast-1" },
+        { name: "香港", val: "cn-hongkong" }
+    ]
 }
 
-var httpUrl = {
-    server_create: constant.baseUrl + 'v1/ecs/add', //创建ecs
-    server_update: constant.baseUrl + 'v1/ecs/update', //更新ecs
-    server_list: constant.baseUrl + 'v1/ecs/query', //查询ecs
+var httpUrl = {}
 
-    server_reboot: constant.baseUrl + 'v1/server/reboot',
-    server_reinstall: constant.baseUrl + 'v1/server/reinstall',
-    server_destroy: constant.baseUrl + 'v1/ecs/delete', //销毁服务器
+function getHttpUrl() {
+    httpUrl = {
+        server_create: constant.baseUrl + 'v1/ecs/add', //创建ecs
+        server_update: constant.baseUrl + 'v1/ecs/update', //更新ecs
+        server_list: constant.baseUrl + 'v1/ecs/query', //查询ecs
 
-    dns_update: constant.baseUrl + 'v1/dns/update', //更新DNS
+        server_reboot: constant.baseUrl + 'v1/server/reboot',
+        server_reinstall: constant.baseUrl + 'v1/server/reinstall',
+        server_destroy: constant.baseUrl + 'v1/ecs/delete', //销毁服务器
+
+        dns_update: constant.baseUrl + 'v1/dns/update', //更新DNS
+    }
 }
 
 function getApiKey() {
@@ -34,6 +43,9 @@ function getQueryString(name) {
 //
 function ajaxGet(url, params, callback) {
     ajaxRequest("GET", url, params, callback);
+    /*     setTimeout(function(){
+            console.log('执行开始');
+        },100); */
 }
 
 function ajaxPost(url, params, callback) {
@@ -46,7 +58,7 @@ function ajaxRequest(type, url, params, callback) {
         data: params,
         dataType: 'JSON',
         timeout: 10000, //设置超时的时间10s
-        async: false, //请求是否异步，默认为异步
+        async: true, //请求是否异步，默认为异步
         type: type,
         beforeSend: function(request) {
             request.setRequestHeader("appid", getApiKey());
@@ -99,28 +111,34 @@ function getServerList() {
     let time = (new Date().getTime() - constant.oldTime) / 1000;
     constant.oldTime = new Date();
     let timeStr = "<p>距上次刷新" + time + "秒</p>";
+    $("#server-list").html(timeStr);
 
+    //let regionId = $("#J_regionId").val();
+    for (const item of constant.regionList) {
+        getServerInfo(item)
+    }
+}
 
-    let regionId = $("#J_regionId").val();
-    let url = httpUrl.server_list + "?regionId=" + regionId;
-
+function getServerInfo(regionInfo) {
+    let url = httpUrl.server_list + "?regionId=" + regionInfo.val;
     ajaxGet(url, null, function(res) {
-        let str = "<p style='color:red;'>获取数据失败...</p>";
+        let str = "<p style='color:red;'>局点：" + regionInfo.name + " 获取数据失败...</p><p>--------</p>";
         if (res) {
             if (res.code == 200) {
-                str = serverList(regionId, res.data);
+                str = serverList(regionInfo, res.data);
                 if (!str) {
-                    str = "<p style='color:red;'>没有...</p>";
+                    str = "<p style='color:red;'>局点：" + regionInfo.name + " 没有...</p><p>--------</p>";
                 }
             }
         }
-        $("#server-list").html(timeStr + str);
+        //$("#server-list").html(timeStr + str);
+        $("#server-list").append(str);
         ////setTimeout(function() {}, 5 * 1000);
     })
 }
 
 
-var serverList = (regionId, data) => {
+var serverList = (regionInfo, data) => {
     let html = "";
     if (data) {
         //arr.forEach((item, index) => console.log(item));
@@ -128,7 +146,7 @@ var serverList = (regionId, data) => {
         for (let item of data) {
             let str = '';
             str += '<ul class="">';
-
+            str += '	<li>所在局点：<a class="a-region">' + regionInfo.name + '</a></li>';
             str += '	<li>实例Id：<a class="a-pw">' + item.instanceId + '</a></li>';
             str += '	<li>使用镜像：<a class="a-price">' + item.imageId + '</a></li>';
             str += '	<li>创建时间：<a class="a-date">' + '空' + '</a></li>';
@@ -145,7 +163,7 @@ var serverList = (regionId, data) => {
             str += '	<li></li>';
             //str += '	<button onclick="serverReboot(\'' + regionId + '\',\''+item.instanceId + '\')">重启</button>';
             //str += '	<button onclick="serverReinstall(\'' + regionId + '\',\''+item.instanceId + '\')">重装</button>';
-            str += '	<button onclick="serverDestroy(\'' + regionId + '\',\'' + item.instanceId + '\')">销毁</button>';
+            str += '	<button onclick="serverDestroy(\'' + regionInfo.val + '\',\'' + item.instanceId + '\')">销毁</button>';
             str += '</ul>';
             html += str;
         };
@@ -189,7 +207,7 @@ function serverCommit(url) {
             //copySubid(res.data);
             console.log("返回结果" + res.data);
 
-            set_select_checked('J_regionId', $("#serverCreate").find(".region option:selected").val());
+            //set_select_checked('J_regionId', $("#serverCreate").find(".region option:selected").val());
             //获取一遍
             getServerList();
         } else {
